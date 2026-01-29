@@ -1,0 +1,324 @@
+.skills-page .tech-stack-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.skills-page .tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 25px 30px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+}
+
+.skills-page .tech-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.skills-page .tech-item i {
+    font-size: 3rem;
+    color: var(--admin-text-muted);
+    transition: color 0.3s ease;
+}
+
+.skills-page .tech-item img {
+    height: 48px;
+    width: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.skills-page .tech-item:hover i {
+    color: var(--admin-primary);
+}
+
+.skills-page .tech-item:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.skills-page .tech-item span {
+    font-size: 0.9rem;
+    color: var(--admin-text-muted);
+    font-weight: 500;
+}
+
+.skills-page .card-header {
+    justify-content: center;
+    border-bottom: 1px solid var(--admin-border-light);
+    padding-bottom: 20px;
+}
+
+.skills-page .card-header h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    color: var(--admin-text-muted);
+}
+
+.skills-page #skillModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-page #skillModal.visible {
+    display: flex !important;
+}
+
+.skills-page #skillModal .modal-content {
+    max-width: 450px;
+}
+
+.skills-page .form-group {
+    margin-bottom: 20px;
+}
+
+.skills-page .icon-type-selector {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.skills-page .icon-type-selector label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.skills-page .icon-type-selector label span {
+    margin-left: 8px;
+}
+
+.skills-page #iconInputGroup {
+    display: block;
+}
+
+.skills-page #imageInputGroup {
+    display: none;
+}
+
+.skills-page .icon-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.skills-page .icon-search-btn {
+    white-space: nowrap;
+}
+
+.skills-page .fontawesome-hint {
+    font-size: 0.75rem;
+    color: var(--admin-text-muted);
+    margin-top: 5px;
+}
+
+.skills-page .modal-footer {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    padding-top: 15px;
+}
+
+.skills-page #skillOptionsModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10001;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-page #skillOptionsModal.visible {
+    display: flex !important;
+}
+
+.skills-page #skillOptionsModal .modal-content {
+    max-width: 400px;
+    text-align: center;
+}
+
+.skills-page #skillOptionsModal .modal-header {
+    justify-content: center;
+    border-bottom: none;
+    padding-bottom: 10px;
+}
+
+.skills-page #skillOptionsModal .modal-body {
+    color: var(--admin-text-muted);
+    margin-bottom: 25px;
+}
+
+.skills-page .skill-action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.skills-page .skill-action-buttons .btn {
+    min-width: 120px;
+}
+
+.skills-page .skill-action-buttons .btn i {
+    margin-right: 8px;
+}
+
+.skills-page #skillOptionsModal .modal-footer {
+    justify-content: center;
+    border-top: none;
+    padding-top: 10px;
+}
+
+.skills-page #skillOptionsModal .modal-footer .btn {
+    width: 100%;
+}
+
+.skills-page #deleteConfirmModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10002;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-page #deleteConfirmModal.visible {
+    display: flex !important;
+}
+
+.skills-page #deleteConfirmModal .modal-content {
+    max-width: 350px;
+    text-align: center;
+}
+
+.skills-page #deleteConfirmModal .modal-header {
+    justify-content: center;
+    border-bottom: none;
+}
+
+.skills-page #deleteConfirmModal .modal-header h3 {
+    color: var(--admin-danger);
+}
+
+.skills-page #deleteConfirmModal .modal-footer {
+    justify-content: center;
+    padding-top: 10px;
+    gap: 10px;
+}
+
+.skills-page #alertModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10003;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-page #alertModal.visible {
+    display: flex !important;
+}
+
+.skills-page #alertModal .modal-content {
+    max-width: 300px;
+    text-align: center;
+}
+
+.skills-page #alertModal .modal-body {
+    padding: 30px 20px;
+}
+
+.skills-page #alertModal .fa-info-circle {
+    font-size: 3rem;
+    color: var(--admin-info);
+    margin-bottom: 20px;
+}
+
+.skills-page #alertMessage {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.skills-page #alertModal .btn-primary {
+    width: 100%;
+}
+
+@media (max-width: 640px) {
+    .skills-page .tech-stack-grid {
+        gap: 15px;
+        padding: 15px 10px;
+        justify-content: center;
+        /* Ensure grid is centered */
+    }
+
+    .skills-page .tech-item {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 10px;
+        text-align: center;
+    }
+
+    .skills-page .tech-item i {
+        font-size: 2.5rem;
+        /* Slightly smaller icons */
+    }
+
+    .skills-page .icon-type-selector {
+        flex-direction: column;
+        gap: 10px;
+        background: var(--admin-bg);
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    /* Make modal inputs full width */
+    .skills-page .icon-input-group {
+        flex-direction: column;
+    }
+
+    .skills-page .icon-search-btn {
+        width: 100%;
+    }
+
+    .skills-page .icon-search-btn {
+        width: 100%;
+    }
+}
+
+.mr-15 {
+    margin-right: 15px;
+}

@@ -1,0 +1,121 @@
+.categories-page .card-header h3 i {
+    margin-right: 10px;
+    color: var(--admin-primary);
+}
+
+.categories-page #categoryForm {
+    margin-top: 25px;
+    display: none;
+}
+
+.categories-page #categoryForm.visible {
+    display: block;
+}
+
+.categories-page .category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    /* Increased padding */
+    border-bottom: 1px solid var(--admin-border);
+    transition: background-color 0.2s ease;
+}
+
+.categories-page .category-item:last-child {
+    border-bottom: none;
+}
+
+.categories-page .category-item:hover {
+    background-color: var(--admin-bg-light-accent, rgba(255, 255, 255, 0.02));
+}
+
+.categories-page .category-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Consistent spacing between name and badge */
+}
+
+.categories-page .category-name {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--admin-text);
+    min-width: 150px;
+    /* Align badges neatly */
+}
+
+/* Deleted Item Styling - "Satırdan Düşme" Effect */
+.categories-page .category-item.deleted-item {
+    opacity: 0.5;
+    background-color: rgba(200, 200, 200, 0.05);
+    filter: grayscale(0.8);
+}
+
+.categories-page .category-item.deleted-item:hover {
+    opacity: 0.8;
+    background-color: rgba(200, 200, 200, 0.1);
+}
+
+.categories-page .category-actions {
+    display: flex;
+    gap: 12px;
+    /* Breathing room for buttons */
+}
+
+.categories-page .empty-state {
+    padding: 30px;
+    text-align: center;
+    color: var(--admin-text-muted);
+}
+
+.categories-page .form-actions {
+    justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+    .categories-page .category-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        background: var(--admin-card);
+        /* Ensure contrast */
+        border-radius: 12px;
+        border: 1px solid var(--admin-border);
+        margin-bottom: 15px;
+        padding: 20px;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .categories-page .category-actions {
+        width: 100%;
+        justify-content: flex-start;
+        /* Align actions to start for easier tapping */
+        gap: 10px;
+        margin-top: 5px;
+        border-top: 1px solid var(--admin-border-light);
+        padding-top: 15px;
+    }
+
+    .categories-page .category-actions .btn-icon {
+        flex: 1;
+        /* Make buttons touch-friendly */
+        justify-content: center;
+        border: 1px solid var(--admin-border);
+    }
+}
+
+.categories-page #categoryList {
+    padding: 0;
+}
+
+.mr-15 {
+    margin-right: 15px;
+}
+
+.modal-icon-restore {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--admin-warning);
+}

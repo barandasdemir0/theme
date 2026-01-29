@@ -1,0 +1,42 @@
+.notifications-page .notif-icon-sm.icon-blue {
+    color: #3b82f6;
+}
+
+.notifications-page .notif-icon-sm.icon-green {
+    color: #10b981;
+}
+
+.notifications-page .notif-icon-sm.icon-yellow {
+    color: #f59e0b;
+}
+
+.notifications-page .notif-icon-sm.icon-purple {
+    color: #6366f1;
+}
+
+/* Remove unread-row styling - make all rows look the same */
+.notifications-page .unread-row {
+    background-color: transparent !important;
+    font-weight: normal !important;
+}
+
+.notifications-page .unread-row td {
+    font-weight: normal !important;
+}
+
+/* Make status badges non-clickable */
+.notifications-page .status-badge {
+    cursor: default !important;
+    pointer-events: none !important;
+    cursor: default !important;
+    pointer-events: none !important;
+}
+
+.pagination-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 20px 0;
+}

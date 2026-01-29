@@ -1,0 +1,343 @@
+/* GitHub Repos Page Styles */
+
+.repo-card {
+    background: var(--admin-card);
+    border: 1px solid var(--admin-border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.repo-card:hover {
+    border-color: var(--admin-primary);
+    box-shadow: 0 4px 15px rgba(var(--admin-primary-rgb), 0.15);
+}
+
+.repo-card.selected {
+    border-color: var(--admin-success);
+    background: rgba(34, 197, 94, 0.05);
+}
+
+.repo-card.selected::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--admin-success);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.repo-card.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.repo-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.repo-name {
+    font-weight: 600;
+    color: var(--admin-text);
+    font-size: 1.1rem;
+}
+
+.repo-description {
+    color: var(--admin-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    min-height: 40px;
+}
+
+.repo-stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.repo-stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--admin-text-muted);
+}
+
+.repo-stat i {
+    font-size: 0.9rem;
+}
+
+/* Language Badges */
+.language-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.language-badge::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.language-badge.javascript::before {
+    background: #f1e05a;
+}
+
+.language-badge.typescript::before {
+    background: #3178c6;
+}
+
+.language-badge.python::before {
+    background: #3572A5;
+}
+
+.language-badge.dart::before {
+    background: #00B4AB;
+}
+
+.language-badge.csharp::before {
+    background: #178600;
+}
+
+.language-badge.html::before {
+    background: #e34c26;
+}
+
+.language-badge.css::before {
+    background: #563d7c;
+}
+
+.language-badge.jupyter::before {
+    background: #DA5B0B;
+}
+
+/* Repos Grid */
+.repos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* Fetch Section */
+.fetch-section {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+    .repos-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .fetch-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .fetch-section .form-control {
+        max-width: none;
+        width: 100%;
+    }
+
+    .repo-stats {
+        gap: 15px;
+    }
+}
+
+.fetch-section .form-control {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.selected-count {
+    background: var(--admin-primary);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Empty State */
+.github-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--admin-text-muted);
+}
+
+.github-empty-state i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Toast Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Max Selection Warning */
+.max-selection-warning {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid #f59e0b;
+    color: #f59e0b;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Utility Classes */
+.mb-25 {
+    margin-bottom: 25px;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.d-inline-flex {
+    display: inline-flex !important;
+}
+
+.pagination-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 20px 0;
+}
+
+/* Toast Notifications */
+.github-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--admin-card);
+    border: 1px solid var(--admin-border);
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 400px;
+    animation: slideIn 0.3s ease;
+}
+
+.github-toast.slide-out {
+    animation: slideOut 0.3s ease forwards;
+}
+
+.github-toast i {
+    font-size: 1.2rem;
+    margin-top: 2px;
+}
+
+.github-toast strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.github-toast span {
+    color: var(--admin-text-muted);
+    font-size: 0.9rem;
+}
+
+.text-danger {
+    color: var(--admin-danger) !important;
+}
+
+.text-muted {
+    color: var(--admin-text-muted) !important;
+}
+
+.text-primary {
+    color: var(--admin-primary) !important;
+}
+
+.text-success {
+    color: var(--admin-success) !important;
+}
+
+.text-warning {
+    color: #f59e0b !important;
+}

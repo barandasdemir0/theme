@@ -1,0 +1,30 @@
+.profile-page .card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-page .card-header i {
+    margin-right: 10px;
+    color: var(--admin-primary);
+}
+
+.profile-page textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.profile-page .typed-card {
+    margin-top: 25px;
+}
+
+.profile-page .typed-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.profile-page .content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}

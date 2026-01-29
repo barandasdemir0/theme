@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Baran Dasdemir - Web Developer, Mobile App Developer & SaaS Creator. Professional portfolio showcasing modern web and mobile projects.">
+    <meta name="keywords" content="Baran Dasdemir, Web Developer, Mobile Developer, SaaS, Portfolio">
+    <meta name="author" content="Baran Dasdemir">
+    <meta name="theme-color" content="#0f0f23">
+
+    <title>Baran Dasdemir | Web & Mobile Developer</title>
+
+    <!-- Theme Script - Load First -->
+    <script src="js/theme.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/reset.css">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="css/components/navbar.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/forms.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/modal.css">
+    <link rel="stylesheet" href="css/components/testimonials.css">
+    <link rel="stylesheet" href="css/components/language.css">
+    <link rel="stylesheet" href="css/components/availability.css">
+    <link rel="stylesheet" href="css/components/chatbot.css"> <!-- Chatbot Widget -->
+    <link rel="stylesheet" href="css/sections/github.css"> <!-- New GitHub CSS -->
+
+    <!-- Section CSS -->
+    <link rel="stylesheet" href="css/sections/hero.css">
+    <link rel="stylesheet" href="css/sections/sections.css">
+    <link rel="stylesheet" href="css/sections/marquee.css">
+
+    <!-- Theme & Responsive -->
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader-container">
+            <div class="loader-logo"><span>B</span>aran<span>.</span></div>
+            <div class="loader"></div>
+            <div class="loader-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="loader-progress"></div>
+            <div class="loader-text">Yükleniyor</div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         NAVBAR
+         ============================================ -->
+    <nav class="navbar navbar-expand-xl">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span>B</span>aran<span>.</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Hakkımda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resume.html">Özgeçmiş</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Projeler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="guestbook.html">Ziyaretçi Defteri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">İletişim</a>
+                    </li>
+                </ul>
+
+                <!-- Language Dropdown -->
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-toggle" aria-label="Dil Seç">
+                        <span>TR</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-menu">
+                        <button class="lang-option active" data-lang="tr">
+                            <span>🇹🇷</span> Türkçe
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <span>🇬🇧</span> English
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero-section" id="hero">
+        <!-- Animated Background Shapes -->
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content" data-aos="fade-up">
+            <p class="hero-subtitle">Merhaba, Ben</p>
+            <h1 class="hero-title">
+                <span class="name">Baran Dasdemir</span>
+            </h1>
+            <div class="hero-typed">
+                <span class="typed-text"></span>
+            </div>
+            <p class="hero-description">
+                Modern teknolojilerle güçlü web, mobil ve SaaS çözümleri geliştiriyorum.
+                Kullanıcı deneyimi odaklı, performanslı ve ölçeklenebilir projeler üretiyorum.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-buttons">
+                <a href="portfolio.html" class="btn-primary-custom">
+                    <i class="fas fa-rocket me-2"></i>Projelerim
+                </a>
+                <a href="assets/cv-baran-dasdemir.pdf" class="btn-outline-custom" download>
+                    <i class="fas fa-download me-2"></i>CV İndir
+                </a>
+                <a href="contact.html" class="btn-outline-custom">
+                    <i class="fas fa-envelope me-2"></i>İletişim
+                </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="hero-social">
+                <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+            <!-- Availability Status -->
+            <div class="hero-availability">
+                <div class="availability-badge available">
+                    <span class="status-dot"></span>
+                    <span class="status-text">İş İçin Müsaitim</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         QUICK ABOUT PREVIEW (Optional Section)
+         ============================================ -->
+    <section class="section about-section" id="about-preview">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-image-wrapper">
+                        <div class="about-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
+                                alt="Baran Dasdemir">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-content">
+                        <p class="section-subtitle">Hakkımda</p>
+                        <h2 class="section-title">Tutkulu Bir <span class="gradient-text">Developer</span></h2>
+                        <p class="about-text">
+                            5+ yıllık deneyimimle web ve mobil uygulama geliştirme alanında uzmanlaştım.
+                            Modern teknolojileri kullanarak kullanıcı odaklı, performanslı ve ölçeklenebilir
+                            çözümler üretmek benim en büyük tutkum.
+                        </p>
+                        <p class="about-text">
+                            Full-stack geliştirme, mobil uygulama geliştirme ve Micro SaaS projeleri konularında
+                            geniş bir deneyime sahibim. Her projede en iyi pratikleri uygulayarak kaliteli
+                            ve sürdürülebilir kod yazmayı hedefliyorum.
+                        </p>
+                        <a href="about.html" class="btn-primary-custom">
+                            <i class="fas fa-user me-2"></i>Daha Fazla Bilgi
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TECH STACK MARQUEE
+         ============================================ -->
+    <section class="marquee-section">
+        <div class="marquee-title" data-aos="fade-up">
+            <h3>Kullandığım Teknolojiler</h3>
+        </div>
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <!-- First set -->
+                <div class="marquee-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                <div class="marquee-item"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                <div class="marquee-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                <div class="marquee-item"><i class="fab fa-react"></i><span>React</span></div>
+                <div class="marquee-item"><i class="fab fa-angular"></i><span>Angular</span></div>
+                <div class="marquee-item"><i class="fab fa-vuejs"></i><span>Vue.js</span></div>
+                <div class="marquee-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+                <div class="marquee-item"><i class="fab fa-python"></i><span>Python</span></div>
+                <div class="marquee-item"><i class="fab fa-php"></i><span>PHP</span></div>
+                <div class="marquee-item"><i class="fab fa-java"></i><span>Java</span></div>
+                <div class="marquee-item"><i class="fab fa-docker"></i><span>Docker</span></div>
+                <div class="marquee-item"><i class="fab fa-aws"></i><span>AWS</span></div>
+                <div class="marquee-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                <div class="marquee-item"><i class="fab fa-github"></i><span>GitHub</span></div>
+                <div class="marquee-item"><i class="fab fa-figma"></i><span>Figma</span></div>
+                <div class="marquee-item"><i class="fab fa-bootstrap"></i><span>Bootstrap</span></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="marquee-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                <div class="marquee-item"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                <div class="marquee-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                <div class="marquee-item"><i class="fab fa-react"></i><span>React</span></div>
+                <div class="marquee-item"><i class="fab fa-angular"></i><span>Angular</span></div>
+                <div class="marquee-item"><i class="fab fa-vuejs"></i><span>Vue.js</span></div>
+                <div class="marquee-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+                <div class="marquee-item"><i class="fab fa-python"></i><span>Python</span></div>
+                <div class="marquee-item"><i class="fab fa-php"></i><span>PHP</span></div>
+                <div class="marquee-item"><i class="fab fa-java"></i><span>Java</span></div>
+                <div class="marquee-item"><i class="fab fa-docker"></i><span>Docker</span></div>
+                <div class="marquee-item"><i class="fab fa-aws"></i><span>AWS</span></div>
+                <div class="marquee-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                <div class="marquee-item"><i class="fab fa-github"></i><span>GitHub</span></div>
+                <div class="marquee-item"><i class="fab fa-figma"></i><span>Figma</span></div>
+                <div class="marquee-item"><i class="fab fa-bootstrap"></i><span>Bootstrap</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         COUNTERS SECTION
+         ============================================ -->
+    <section class="counters-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-6 col-md-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="counter-item">
+                        <div class="counter-icon"><i class="fas fa-code"></i></div>
+                        <div class="counter-number" data-target="50">0</div>
+                        <div class="counter-label">Proje</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="counter-item">
+                        <div class="counter-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="counter-number" data-target="5">0</div>
+                        <div class="counter-label">Yıl Deneyim</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="counter-item">
+                        <div class="counter-icon"><i class="fas fa-mug-hot"></i></div>
+                        <div class="counter-number" data-target="1000">0</div>
+                        <div class="counter-label">Çay</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FEATURED PROJECTS PREVIEW
+         ============================================ -->
+    <section class="section portfolio-section" id="projects-preview">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-subtitle">Portföy</p>
+                <h2 class="section-title">Öne Çıkan <span class="gradient-text">Projeler</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
+                            alt="E-Commerce Platform">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="btn-icon" title="Detay"><i class="fas fa-eye"></i></a>
+                            <a href="#" class="btn-icon" title="Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Web Uygulama</span>
+                        <h4>E-Ticaret Platformu</h4>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">React</span>
+                            <span class="portfolio-tag">Node.js</span>
+                            <span class="portfolio-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop"
+                            alt="Mobile App">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="btn-icon" title="Detay"><i class="fas fa-eye"></i></a>
+                            <a href="#" class="btn-icon" title="Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Mobil Uygulama</span>
+                        <h4>Fitness Tracker App</h4>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Flutter</span>
+                            <span class="portfolio-tag">Firebase</span>
+                            <span class="portfolio-tag">Dart</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+                            alt="SaaS Dashboard">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="btn-icon" title="Detay"><i class="fas fa-eye"></i></a>
+                            <a href="#" class="btn-icon" title="Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Micro SaaS</span>
+                        <h4>Analytics Dashboard</h4>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Vue.js</span>
+                            <span class="portfolio-tag">Python</span>
+                            <span class="portfolio-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="portfolio.html" class="btn-primary-custom">
+                    <i class="fas fa-th me-2"></i>Tüm Projeleri Gör
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIALS SECTION
+         ============================================ -->
+    <section class="section testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <p class="section-subtitle">Referanslar</p>
+                <h2 class="section-title">Mutlu <span class="gradient-text">Müşteriler</span></h2>
+                <div class="section-line mx-auto"></div>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- Testimonial 1 -->
+                            <div class="carousel-item active">
+                                <div class="testimonial-card text-center">
+                                    <div class="testimonial-avatar mb-4 d-inline-block">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client 1">
+                                    </div>
+                                    <p class="testimonial-text">
+                                        "Baran ile çalışmak harika bir deneyimdi. Projemizi tam zamanında ve
+                                        beklediğimizden çok daha iyi bir kalitede teslim etti. İletişimi ve teknik
+                                        bilgisi
+                                        üst düzeyde."
+                                    </p>
+                                    <div class="testimonial-info">
+                                        <h5 class="testimonial-name">Ahmet Yılmaz</h5>
+                                        <span class="testimonial-role">CEO, TechStart</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 2 -->
+                            <div class="carousel-item">
+                                <div class="testimonial-card text-center">
+                                    <div class="testimonial-avatar mb-4 d-inline-block">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client 2">
+                                    </div>
+                                    <p class="testimonial-text">
+                                        "Mobil uygulamamızın arayüz tasarımı ve geliştirmesi konusunda Baran'ın vurduğu
+                                        dokunuşlar mükemmeldi. Kullanıcı geri dönüşleri çok olumlu."
+                                    </p>
+                                    <div class="testimonial-info">
+                                        <h5 class="testimonial-name">Ayşe Demir</h5>
+                                        <span class="testimonial-role">Product Manager, SoftApp</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 3 -->
+                            <div class="carousel-item">
+                                <div class="testimonial-card text-center">
+                                    <div class="testimonial-avatar mb-4 d-inline-block">
+                                        <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Client 3">
+                                    </div>
+                                    <p class="testimonial-text">
+                                        "SaaS projemizin dashboard geliştirmesinde gösterdiği performans takdire şayan.
+                                        Karmaşık veri setlerini bu kadar temiz bir arayüzle sunması etkileyici."
+                                    </p>
+                                    <div class="testimonial-info">
+                                        <h5 class="testimonial-name">Mehmet Kaya</h5>
+                                        <span class="testimonial-role">CTO, DataFlow</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+
+                        <!-- Indicators -->
+                        <div class="carousel-indicators" style="bottom: -50px;">
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         GITHUB PROJECTS SECTION
+         ============================================ -->
+    <section class="section github-section" id="github">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <p class="section-subtitle">Open Source</p>
+                <h2 class="section-title">GitHub <span class="gradient-text">Kod Paylaşımları</span></h2>
+                <div class="section-line mx-auto"></div>
+                <p class="text-center mt-3"
+                    style="max-width: 600px; margin-left: auto; margin-right: auto; color: var(--text-secondary);">
+                    En güncel açık kaynak projelerim ve kod denemelerim.
+                </p>
+            </div>
+
+            <!-- GitHub Grid - Fallback Static Cards -->
+            <div class="github-grid" id="github-projects-grid">
+                <!-- Repo 1 -->
+                <div class="github-card" data-aos="fade-up">
+                    <div class="github-card-header">
+                        <i class="fas fa-book-bookmark"></i>
+                        <h4><a href="https://github.com/barandasdemir0" target="_blank">portfolio-website</a></h4>
+                    </div>
+                    <p class="github-card-desc">Modern ve responsive portfolio websitesi. HTML, CSS, JavaScript ile
+                        geliştirildi.</p>
+                    <div class="github-card-footer">
+                        <span class="github-lang"><span class="lang-dot" style="background: #f1e05a;"></span>
+                            JavaScript</span>
+                        <span class="github-stat"><i class="far fa-star"></i> 12</span>
+                        <span class="github-stat"><i class="fas fa-code-branch"></i> 3</span>
+                    </div>
+                </div>
+
+                <!-- Repo 2 -->
+                <div class="github-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="github-card-header">
+                        <i class="fas fa-book-bookmark"></i>
+                        <h4><a href="https://github.com/barandasdemir0" target="_blank">react-dashboard</a></h4>
+                    </div>
+                    <p class="github-card-desc">Admin dashboard template built with React, TypeScript and Tailwind CSS.
+                    </p>
+                    <div class="github-card-footer">
+                        <span class="github-lang"><span class="lang-dot" style="background: #3178c6;"></span>
+                            TypeScript</span>
+                        <span class="github-stat"><i class="far fa-star"></i> 28</span>
+                        <span class="github-stat"><i class="fas fa-code-branch"></i> 8</span>
+                    </div>
+                </div>
+
+                <!-- Repo 3 -->
+                <div class="github-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="github-card-header">
+                        <i class="fas fa-book-bookmark"></i>
+                        <h4><a href="https://github.com/barandasdemir0" target="_blank">python-automation</a></h4>
+                    </div>
+                    <p class="github-card-desc">Python ile yazılmış otomasyon scriptleri ve yararlı araçlar koleksiyonu.
+                    </p>
+                    <div class="github-card-footer">
+                        <span class="github-lang"><span class="lang-dot" style="background: #3572A5;"></span>
+                            Python</span>
+                        <span class="github-stat"><i class="far fa-star"></i> 45</span>
+                        <span class="github-stat"><i class="fas fa-code-branch"></i> 12</span>
+                    </div>
+                </div>
+
+                <!-- Repo 4 -->
+                <div class="github-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="github-card-header">
+                        <i class="fas fa-book-bookmark"></i>
+                        <h4><a href="https://github.com/barandasdemir0" target="_blank">flutter-saas-app</a></h4>
+                    </div>
+                    <p class="github-card-desc">Cross-platform SaaS mobile application starter template with Flutter.
+                    </p>
+                    <div class="github-card-footer">
+                        <span class="github-lang"><span class="lang-dot" style="background: #00B4AB;"></span>
+                            Dart</span>
+                        <span class="github-stat"><i class="far fa-star"></i> 67</span>
+                        <span class="github-stat"><i class="fas fa-code-branch"></i> 15</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="https://github.com/barandasdemir0" target="_blank" class="btn-outline-custom">
+                    <i class="fab fa-github me-2"></i>Tüm Repoları Gör
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA SECTION
+         ============================================ -->
+    <section class="section cta-section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="section-title mb-4">Projeniz İçin <span class="gradient-text">Hazırım</span></h2>
+                    <p class="mb-4" style="color: var(--text-secondary); font-size: 1.1rem;">
+                        İster yeni bir proje ister mevcut bir projenin geliştirilmesi olsun,
+                        fikirlerinizi hayata geçirmek için buradayım.
+                    </p>
+                    <a href="contact.html" class="btn-primary-custom">
+                        <i class="fas fa-paper-plane me-2"></i>Hemen İletişime Geç
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <h3><span>B</span>aran<span>.</span></h3>
+                    <p>Modern teknolojilerle web, mobil ve SaaS çözümleri geliştiren tutkulu bir developer.</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/" target="_blank" rel="noopener"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/" target="_blank" rel="noopener"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="about.html">Hakkımda</a></li>
+                        <li><a href="resume.html">Özgeçmiş</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer-links">
+                    <h4>Kaynaklar</h4>
+                    <ul>
+                        <li><a href="assets/cv-baran-dasdemir.pdf" download>CV İndir</a></li>
+                        <li><a href="blog.html">Blogum</a></li>
+                        <li><a href="portfolio.html">Projelerim</a></li>
+                        <li><a href="guestbook.html">Ziyaret Defteri</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-links">
+                    <h4>İletişim</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope me-2"></i>hello@barandasdemir.com</li>
+                        <li><i class="fas fa-phone me-2"></i>+90 555 123 4567</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i>İstanbul, Türkiye</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Baran Dasdemir. Made with <span>❤️</span> in Istanbul
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <button class="chatbot-toggle" aria-label="Sohbet Aç">
+        <i class="fas fa-comment-dots"></i>
+        <span class="badge">1</span>
+    </button>
+
+    <div class="chatbot-window">
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">🤖</div>
+            <div class="chatbot-info">
+                <h4>Baran Asistan</h4>
+                <span>Genellikle hemen yanıt verir</span>
+            </div>
+            <button class="chatbot-close" aria-label="Kapat">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages">
+            <div class="chat-message bot">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    Merhaba! 👋 Ben Baran'ın dijital asistanıyım. Size projeler, yetenekler veya iletişim hakkında
+                    yardımcı olabilirim. Ne öğrenmek istersiniz?
+                </div>
+            </div>
+        </div>
+        <div class="quick-replies">
+            <button class="quick-reply-btn">Baran kimdir?</button>
+            <button class="quick-reply-btn">Projeler</button>
+            <button class="quick-reply-btn">İletişim</button>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" name="chatbotMessage" placeholder="Mesajınızı yazın..." />
+            <button class="chatbot-send" aria-label="Gönder">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================
+         SCRIPTS
+         ============================================ -->
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS - Animate On Scroll -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/github.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+
+</html>

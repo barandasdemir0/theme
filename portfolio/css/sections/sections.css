@@ -1,0 +1,340 @@
+/* ============================================
+   SECTION - About & Skills
+   ============================================ */
+.about-section {
+    position: relative;
+}
+
+.about-image-wrapper {
+    position: relative;
+    padding: 20px;
+}
+
+.about-image {
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: var(--transition-slow);
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+.about-image::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: 20px;
+    bottom: 20px;
+    border: 3px solid var(--primary-color);
+    border-radius: var(--border-radius-lg);
+    z-index: -1;
+}
+
+.about-content h2 {
+    margin-bottom: 1.5rem;
+}
+
+.about-text {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* Info Grid */
+.about-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-item i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.info-item span {
+    color: var(--text-secondary);
+}
+
+.info-item strong {
+    color: var(--text-primary);
+}
+
+/* Skills Section */
+.skills-section {
+    position: relative;
+}
+
+/* ============================================
+   SECTION - Counters
+   ============================================ */
+.counters-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.counter-item {
+    text-align: center;
+    padding: 30px;
+}
+
+.counter-icon {
+    font-size: 3rem;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+}
+
+.counter-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.counter-number span {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.counter-label {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ============================================
+   SECTION - Resume / Timeline
+   ============================================ */
+.resume-section {
+    position: relative;
+}
+
+.resume-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.resume-tab {
+    padding: 12px 30px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-xl);
+    color: var(--text-primary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.resume-tab:hover,
+.resume-tab.active {
+    background: var(--gradient-primary);
+    border-color: transparent;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: var(--gradient-primary);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 0 40px 40px;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+    padding-right: 60px;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+    padding-left: 60px;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border: 4px solid var(--bg-secondary);
+    border-radius: 50%;
+    top: 0;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+
+.timeline-content h4 {
+    margin-bottom: 10px;
+}
+
+.timeline-content h5 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* ============================================
+   SECTION - Portfolio
+   ============================================ */
+.portfolio-section {
+    position: relative;
+}
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-xl);
+    color: var(--text-primary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--gradient-primary);
+    border-color: transparent;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* ============================================
+   SECTION - Contact
+   ============================================ */
+.contact-section {
+    position: relative;
+}
+
+/* ============================================
+   SECTION - Common
+   ============================================ */
+.section {
+    padding: var(--section-padding);
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.section-line {
+    width: 80px;
+    height: 4px;
+    background: var(--gradient-primary);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    padding: 20px 0;
+}
+
+.pagination-btn {
+    background-color: transparent;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    color: #94a3b8;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+.pagination-btn:hover {
+    background-color: rgba(30, 41, 59, 0.5);
+    border-color: #64748b;
+    color: #cbd5e1;
+}
+
+.pagination-btn.active {
+    background-color: #6366f1;
+    border-color: #6366f1;
+    color: white;
+}

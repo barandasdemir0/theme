@@ -1,0 +1,33 @@
+:root {
+    /* Dark Mode (Default) */
+    --admin-primary: #6366f1;
+    --admin-secondary: #8b5cf6;
+    --admin-bg: #0f0f23;
+    --admin-sidebar: #1a1a2e;
+    --admin-card: #16213e;
+    --admin-border: rgba(255, 255, 255, 0.1);
+    --admin-border-light: rgba(255, 255, 255, 0.05);
+    /* Added for consistency */
+    --admin-text: #e2e8f0;
+    --admin-text-muted: #94a3b8;
+    --admin-success: #10b981;
+    --admin-warning: #f59e0b;
+    --admin-danger: #ef4444;
+    --admin-info: #3b82f6;
+    --admin-input-bg: #0f0f23;
+    /* Same as bg in dark mode */
+}
+
+/* Light Mode */
+html.light-mode {
+    --admin-bg: #f1f5f9;
+    --admin-sidebar: #ffffff;
+    --admin-card: #ffffff;
+    --admin-border: #e2e8f0;
+    --admin-border-light: #f1f5f9;
+    --admin-text: #1e293b;
+    --admin-text: #1e293b;
+    --admin-text-muted: #64748b;
+    --admin-input-bg: #ffffff;
+    /* White inputs in light mode for better contrast */
+}

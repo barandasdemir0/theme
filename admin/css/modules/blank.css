@@ -1,0 +1,42 @@
+.blank-page .blank-grid {
+    grid-template-columns: 1fr;
+}
+
+.blank-page .blank-card-body {
+    padding: 40px;
+    text-align: center;
+}
+
+.blank-page .blank-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--admin-primary), var(--admin-primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blank-page .blank-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.blank-page .blank-title {
+    color: var(--admin-text);
+    margin-bottom: 10px;
+}
+
+.blank-page .blank-text {
+    color: var(--admin-text-muted);
+    max-width: 500px;
+    margin: 0 auto 30px;
+}
+
+.blank-page .blank-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}

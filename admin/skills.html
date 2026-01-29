@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <script src="js/theme-init.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yetenekler | Portfolio Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/modules/variables.css">
+    <link rel="stylesheet" href="css/modules/global.css">
+    <link rel="stylesheet" href="css/modules/layout.css">
+    <link rel="stylesheet" href="css/modules/components.css">
+    <link rel="stylesheet" href="css/modules/notifications.css">
+    <link rel="stylesheet" href="css/modules/login.css">
+    <link rel="stylesheet" href="css/modules/modal.css">
+    <link rel="stylesheet" href="css/modules/skills.css">
+</head>
+
+<body class="skills-page">
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2><span>Admin</span> Panel</h2>
+                <p>Portfolio Yönetimi</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">
+                    <p class="menu-section-title">Sayfa Yönetimi</p>
+                    <a href="profile.html" class="menu-item">
+                        <i class="fas fa-home"></i>
+                        <span>Hero & Profil</span>
+                    </a>
+                    <a href="about.html" class="menu-item">
+                        <i class="fas fa-user"></i>
+                        <span>Hakkımda</span>
+                    </a>
+                    <a href="resume.html" class="menu-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Özgeçmiş</span>
+                    </a>
+                    <a href="contact.html" class="menu-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>İletişim</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">İçerik Yönetimi</p>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="messages.html" class="menu-item">
+                        <i class="fas fa-inbox"></i>
+                        <span>Mesajlar</span>
+                    </a>
+                    <a href="projects.html" class="menu-item">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Projeler</span>
+                    </a>
+                    <a href="blog.html" class="menu-item">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog Yazıları</span>
+                    </a>
+                    <a href="guestbook.html" class="menu-item">
+                        <i class="fas fa-comments"></i>
+                        <span>Ziyaretçi Defteri</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">Ayarlar</p>
+                    <a href="categories.html" class="menu-item">
+                        <i class="fas fa-tags"></i>
+                        <span>Kategoriler</span>
+                    </a>
+                    <a href="skills.html" class="menu-item active">
+                        <i class="fas fa-code"></i>
+                        <span>Yetenekler</span>
+                    </a>
+                    <a href="github.html" class="menu-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Repoları</span>
+                    </a>
+                    <a href="settings.html" class="menu-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Site Ayarları</span>
+                    </a>
+                    <a href="security.html" class="menu-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Güvenlik</span>
+                    </a>
+                    <a href="chatbot.html" class="menu-item">
+                        <i class="fas fa-robot"></i>
+                        <span>Chatbot</span>
+                    </a>
+                    <a href="notifications.html" class="menu-item">
+                        <i class="fas fa-bell"></i>
+                        <span>Bildirimler</span>
+                    </a>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Çıkış Yap</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <header class="admin-header">
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                <div class="page-title">
+                    <h1>Yetenekler</h1>
+                    <p>Tech stack ve becerilerinizi yönetin</p>
+                </div>
+
+                <!-- Localization Config -->
+                <div id="skillsConfig" class="hidden" data-text-add="Yeni Yetenek Ekle" data-text-edit="Yetenek Düzenle"
+                    data-msg-enter-name="Lütfen bir isim girin." data-msg-delete-confirm-suffix="silinsin mi?"></div>
+
+                <div class="header-actions">
+                    <button class="btn btn-primary mr-15" data-action="addSkill">
+                        <i class="fas fa-plus"></i>
+                        Yeni Yetenek
+                    </button>
+
+                    <a href="../index.html" target="_blank" class="btn-icon" title="Siteye Git">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <button class="btn-icon notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+
+                    <div class="user-profile" data-action="navigateTo" data-href="profile.html">
+                        <img src="https://ui-avatars.com/api/?name=Baran+D&background=6366f1&color=fff" alt="Admin">
+                        <div class="user-info">
+                            <h4>Baran Dasdemir</h4>
+                            <span>Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Tech Stack Display -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>— Kullandığım Teknolojiler —</h3>
+                </div>
+                <div class="card-body">
+                    <div class="tech-stack-grid" id="techStackGrid">
+                        <!-- Static Examples -->
+                        <div class="tech-item" data-skill-name="PHP">
+                            <i class="fab fa-php"></i>
+                            <span>PHP</span>
+                        </div>
+                        <div class="tech-item" data-skill-name="Java">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="tech-item" data-skill-name="Docker">
+                            <i class="fas fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="tech-item" data-skill-name="AWS">
+                            <i class="fab fa-aws"></i>
+                            <span>AWS</span>
+                        </div>
+                        <div class="tech-item" data-skill-name="Git">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="tech-item" data-skill-name="GitHub">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="tech-item" data-skill-name="Figma">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
+                        </div>
+                        <div class="tech-item" data-skill-name="Bootstrap">
+                            <i class="fab fa-bootstrap"></i>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="tech-item" data-skill-name="HTML5">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="tech-item" data-skill-name="CSS3">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="tech-item" data-skill-name="JavaScript">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-item" data-skill-name="React">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="admin-footer">
+                <div>&copy; 2024 Baran Dasdemir. Tüm hakları saklıdır.</div>
+                <div>v1.0.0</div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Add Skill Modal -->
+    <div class="modal" id="skillModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="skillModalTitle">Yeni Yetenek Ekle</h3>
+            </div>
+            <div class="modal-body">
+                <form id="addSkillForm">
+                    <div class="form-row">
+                        <div class="form-group flex-2">
+                            <label>Teknoloji Adı</label>
+                            <input type="text" id="skillNameInput" class="form-control" placeholder="Örn: Python"
+                                required>
+                        </div>
+                        <div class="form-group flex-1">
+                            <label>Sıralama</label>
+                            <input type="number" id="displayOrderInput" class="form-control" placeholder="0" min="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Görsel Tipi</label>
+                        <div class="icon-type-selector">
+                            <label>
+                                <input type="radio" name="iconType" value="icon" checked>
+                                <span>İkon (FontAwesome)</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="iconType" value="image">
+                                <span>Resim Linki</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="iconInputGroup">
+                        <label>İkon Sınıfı</label>
+                        <div class="icon-input-group">
+                            <input type="text" id="iconClassInput" class="form-control"
+                                placeholder="Örn: fab fa-python">
+                            <a href="https://fontawesome.com/v5/search?m=free" target="_blank"
+                                class="btn btn-outline icon-search-btn" title="İkon Ara"><i
+                                    class="fas fa-search"></i></a>
+                        </div>
+                        <p class="fontawesome-hint">FontAwesome 5 sınıflarını kullanın.</p>
+                    </div>
+
+                    <div class="form-group" id="imageInputGroup">
+                        <label>Resim URL</label>
+                        <input type="url" id="imageUrlInput" class="form-control"
+                            placeholder="https://example.com/logo.png">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-action="closeSkillModal">İptal</button>
+                <button class="btn btn-success" data-action="saveSkill">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skill Options Action Modal -->
+    <div class="modal" id="skillOptionsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="selectedSkillName">Teknoloji Adı</h3>
+            </div>
+            <div class="modal-body">
+                <p>Bu teknoloji ile ne yapmak istersiniz?</p>
+                <div class="skill-action-buttons">
+                    <button class="btn btn-primary" data-action="editSkill">
+                        <i class="fas fa-edit"></i> Düzenle
+                    </button>
+                    <button class="btn btn-danger" data-action="deleteSkill">
+                        <i class="fas fa-trash"></i> Sil
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-action="closeSkillOptionsModal">İptal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteConfirmModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> Silme Onayı</h3>
+            </div>
+            <div class="modal-body">
+                <p id="deleteConfirmText">Bu yeteneği silmek istediğinize emin misiniz?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-action="closeDeleteConfirm">İptal</button>
+                <button class="btn btn-danger" data-action="confirmDelete">Evet, Sil</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Modal (Generic) -->
+    <div class="modal" id="alertModal">
+        <div class="modal-content">
+            <div class="modal-body">
+                <i class="fas fa-info-circle"></i>
+                <p id="alertMessage">Mesaj</p>
+                <button class="btn btn-primary" data-action="closeAlert">Tamam</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/modules/pages.js"></script>
+    <script src="js/modules/notifications.js"></script>
+    <script src="js/modules/auth.js"></script>
+    <script src="js/modules/ui.js"></script>
+    <script src="js/modules/skills.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

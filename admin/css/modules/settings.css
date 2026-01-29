@@ -1,0 +1,148 @@
+.settings-page .circle-icon {
+    color: var(--admin-success);
+    margin-right: 10px;
+    font-size: 0.8rem;
+}
+
+.settings-page .pdf-icon {
+    margin-right: 10px;
+}
+
+.settings-page .card-header h3 i {
+    margin-right: 10px;
+}
+
+.settings-page .input-hint {
+    margin-top: 10px;
+}
+
+.settings-page .status-selector {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.settings-page .status-selector label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border: 1px solid var(--admin-border-light);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.settings-page .status-selector label:hover {
+    border-color: var(--admin-primary);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.settings-page .status-color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.settings-page .status-color-dot.success {
+    background: var(--admin-success);
+}
+
+.settings-page .status-color-dot.warning {
+    background: var(--admin-warning);
+}
+
+.settings-page .form-actions {
+    margin-top: 20px;
+}
+
+.settings-page .pdf-input {
+    margin-bottom: 15px;
+}
+
+.settings-page .file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.settings-page .file-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.settings-page .file-label {
+    font-size: 0.9rem;
+    width: 60px;
+    flex-shrink: 0;
+}
+
+.settings-page .file-input {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.settings-page .file-input[readonly] {
+    background: var(--admin-bg-light);
+    cursor: not-allowed;
+}
+
+.settings-page .download-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.settings-page #alertModal {
+    display: none;
+    z-index: 10003;
+}
+
+.settings-page #alertModal.visible {
+    display: flex;
+}
+
+.settings-page #alertModal .modal-content {
+    max-width: 300px;
+    text-align: center;
+}
+
+.settings-page #alertModal .modal-body {
+    padding: 30px 20px;
+}
+
+.settings-page #alertModal .fa-info-circle {
+    font-size: 3rem;
+    color: var(--admin-info);
+    margin-bottom: 20px;
+}
+
+.settings-page #alertMessage {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.settings-page #alertModal .btn-primary {
+    width: 100%;
+}
+
+@media (max-width: 640px) {
+    .settings-page .file-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+
+    .settings-page .file-label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .settings-page .status-selector {
+        flex-direction: column;
+    }
+
+    .settings-page .status-selector label {
+        width: 100%;
+    }
+}

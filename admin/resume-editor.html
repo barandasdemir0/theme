@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <script src="js/theme-init.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özgeçmiş Düzenle | Portfolio Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/modules/variables.css">
+    <link rel="stylesheet" href="css/modules/global.css">
+    <link rel="stylesheet" href="css/modules/layout.css">
+    <link rel="stylesheet" href="css/modules/components.css">
+    <link rel="stylesheet" href="css/modules/editor.css">
+    <link rel="stylesheet" href="css/modules/notifications.css">
+</head>
+
+<body class="resume-editor-page">
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2><span>Admin</span> Panel</h2>
+                <p>Portfolio Yönetimi</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">
+                    <p class="menu-section-title">Sayfa Yönetimi</p>
+                    <a href="profile.html" class="menu-item">
+                        <i class="fas fa-home"></i>
+                        <span>Hero & Profil</span>
+                    </a>
+                    <a href="about.html" class="menu-item">
+                        <i class="fas fa-user"></i>
+                        <span>Hakkımda</span>
+                    </a>
+                    <a href="resume.html" class="menu-item active">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Özgeçmiş</span>
+                    </a>
+                    <a href="contact.html" class="menu-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>İletişim</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">İçerik Yönetimi</p>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="messages.html" class="menu-item">
+                        <i class="fas fa-inbox"></i>
+                        <span>Mesajlar</span>
+                    </a>
+                    <a href="projects.html" class="menu-item">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Projeler</span>
+                    </a>
+                    <a href="blog.html" class="menu-item">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog Yazıları</span>
+                    </a>
+                    <a href="guestbook.html" class="menu-item">
+                        <i class="fas fa-comments"></i>
+                        <span>Ziyaretçi Defteri</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">Ayarlar</p>
+                    <a href="categories.html" class="menu-item">
+                        <i class="fas fa-tags"></i>
+                        <span>Kategoriler</span>
+                    </a>
+                    <a href="skills.html" class="menu-item">
+                        <i class="fas fa-code"></i>
+                        <span>Yetenekler</span>
+                    </a>
+                    <a href="github.html" class="menu-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Repoları</span>
+                    </a>
+                    <a href="settings.html" class="menu-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Site Ayarları</span>
+                    </a>
+                    <a href="security.html" class="menu-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Güvenlik</span>
+                    </a>
+                    <a href="chatbot.html" class="menu-item">
+                        <i class="fas fa-robot"></i>
+                        <span>Chatbot</span>
+                    </a>
+                    <a href="notifications.html" class="menu-item">
+                        <i class="fas fa-bell"></i>
+                        <span>Bildirimler</span>
+                    </a>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Çıkış Yap</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main editor-page">
+            <header class="admin-header">
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                <div class="page-title">
+                    <h1 id="pageTitle">Yeni Deneyim Ekle</h1>
+                    <p id="pageSubtitle">Özgeçmişinize yeni bir iş deneyimi ekleyin</p>
+                </div>
+                <div class="header-actions">
+                    <a href="resume.html" class="btn btn-outline btn-gap">Geri</a>
+
+                    <a href="../index.html" target="_blank" class="btn-icon" title="Siteye Git">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <button class="btn-icon notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+
+                    <div class="user-profile" data-action="navigateTo" data-href="profile.html">
+                        <img src="https://ui-avatars.com/api/?name=Baran+D&background=6366f1&color=fff" alt="Admin">
+                        <div class="user-info">
+                            <h4>Baran Dasdemir</h4>
+                            <span>Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="card editor-card">
+                <div class="card-header">
+                    <h3 id="formTitle">Deneyim Bilgileri</h3>
+                </div>
+
+                <form id="resumeForm">
+                    <!-- Hidden input to store type (Experience/Education/Certificate) -->
+                    <input type="hidden" id="entryType" value="İş Deneyimi">
+                    <input type="hidden" id="entryId" value="">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Tür</label>
+                            <input type="text" class="form-control" id="displayType" value="İş Deneyimi" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>Sıralama</label>
+                            <input type="number" class="form-control" id="displayOrder" placeholder="0" min="0">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label id="labelPosition">Pozisyon / Bölüm *</label>
+                            <input type="text" class="form-control" id="inputPosition"
+                                placeholder="Örn: Full Stack Developer">
+                        </div>
+                        <div class="form-group">
+                            <label id="labelCompany">Şirket / Okul / Kurum *</label>
+                            <input type="text" class="form-control" id="inputCompany" placeholder="Örn: TechCorp">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Konum</label>
+                            <input type="text" class="form-control" id="inputLocation"
+                                placeholder="Örn: İstanbul, Türkiye">
+                        </div>
+                        <div class="form-group">
+                            <label>Görünürlük</label>
+                            <select class="form-control" id="inputVisibility">
+                                <option value="active">Sitede Aktif</option>
+                                <option value="hidden">Gizli</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Başlangıç Tarihi *</label>
+                            <input type="month" class="form-control" id="inputStartDate" lang="tr">
+                        </div>
+                        <div class="form-group">
+                            <label>Bitiş Tarihi</label>
+                            <input type="month" class="form-control" id="inputEndDate"
+                                placeholder="Boş bırakılırsa 'Devam Ediyor'" lang="tr">
+                            <small class="form-text text-muted">Devam ediyorsa boş bırakınız.</small>
+                        </div>
+                    </div>
+
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            <textarea class="form-control min-h-150" id="inputDescription"
+                                placeholder="Görev ve sorumluluklarınız..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Kaydet
+                        </button>
+                        <a href="resume.html" class="btn btn-outline">İptal</a>
+
+                        <!-- Restore button only shows up when editing a deleted item (logic in JS) -->
+                        <button type="button" class="btn btn-warning hidden" id="btnRestore">
+                            <i class="fas fa-undo"></i> Geri Yükle
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <footer class="admin-footer">
+                <div>&copy; 2024 Baran Dasdemir. Tüm hakları saklıdır.</div>
+                <div>v1.0.0</div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/modules/pages.js"></script>
+    <script src="js/modules/notifications.js"></script>
+    <script src="js/modules/auth.js"></script>
+    <script src="js/modules/ui.js"></script>
+    <script src="js/modules/resume-editor.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

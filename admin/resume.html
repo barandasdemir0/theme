@@ -1,0 +1,402 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <script src="js/theme-init.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özgeçmiş | Portfolio Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/modules/variables.css">
+    <link rel="stylesheet" href="css/modules/global.css">
+    <link rel="stylesheet" href="css/modules/layout.css">
+    <link rel="stylesheet" href="css/modules/components.css">
+    <link rel="stylesheet" href="css/modules/badges.css">
+    <link rel="stylesheet" href="css/modules/notifications.css">
+    <link rel="stylesheet" href="css/modules/login.css">
+    <link rel="stylesheet" href="css/modules/resume.css">
+</head>
+
+<body class="resume-page">
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2><span>Admin</span> Panel</h2>
+                <p>Portfolio Yönetimi</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">
+                    <p class="menu-section-title">Sayfa Yönetimi</p>
+                    <a href="profile.html" class="menu-item">
+                        <i class="fas fa-home"></i>
+                        <span>Hero & Profil</span>
+                    </a>
+                    <a href="about.html" class="menu-item">
+                        <i class="fas fa-user"></i>
+                        <span>Hakkımda</span>
+                    </a>
+                    <a href="resume.html" class="menu-item active">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Özgeçmiş</span>
+                    </a>
+                    <a href="contact.html" class="menu-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>İletişim</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">İçerik Yönetimi</p>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="messages.html" class="menu-item">
+                        <i class="fas fa-inbox"></i>
+                        <span>Mesajlar</span>
+                    </a>
+                    <a href="projects.html" class="menu-item">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Projeler</span>
+                    </a>
+                    <a href="blog.html" class="menu-item">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog Yazıları</span>
+                    </a>
+                    <a href="guestbook.html" class="menu-item">
+                        <i class="fas fa-comments"></i>
+                        <span>Ziyaretçi Defteri</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">Ayarlar</p>
+                    <a href="categories.html" class="menu-item">
+                        <i class="fas fa-tags"></i>
+                        <span>Kategoriler</span>
+                    </a>
+                    <a href="skills.html" class="menu-item">
+                        <i class="fas fa-code"></i>
+                        <span>Yetenekler</span>
+                    </a>
+                    <a href="github.html" class="menu-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Repoları</span>
+                    </a>
+                    <a href="settings.html" class="menu-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Site Ayarları</span>
+                    </a>
+                    <a href="security.html" class="menu-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Güvenlik</span>
+                    </a>
+                    <a href="chatbot.html" class="menu-item">
+                        <i class="fas fa-robot"></i>
+                        <span>Chatbot</span>
+                    </a>
+                    <a href="notifications.html" class="menu-item">
+                        <i class="fas fa-bell"></i>
+                        <span>Bildirimler</span>
+                    </a>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Çıkış Yap</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <header class="admin-header">
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                <div class="page-title">
+                    <h1>Özgeçmiş Sayfası</h1>
+                    <p>Portfolio "Özgeçmiş" (resume.html) sayfası içeriğini yönetin</p>
+                </div>
+
+                <!-- Localization Config -->
+                <div id="resumeConfig" class="hidden" data-title-info="Bilgi" data-title-success="Başarılı"
+                    data-title-warning="Uyarı" data-title-error="Hata"
+                    data-msg-editing-deleted="Silinen öğe düzenleniyor."
+                    data-msg-edit-hint="Formu düzenleyin ve kaydedin." data-msg-restored="Öğe başarıyla geri yüklendi!"
+                    data-msg-delete-title="Silme Onayı"
+                    data-msg-delete-body-suffix='öğesini silmek istediğinize emin misiniz? <br><small>Bu işlem geri alınabilir (soft delete).</small>'
+                    data-msg-delete-confirm-suffix="silinsin mi?" data-msg-deleted="Öğe silindi (Arşivlendi)!"
+                    data-msg-update-success="Güncelleme başarılı!" data-msg-add-success="Ekleme başarılı!"
+                    data-text-past="Geçmiş" data-text-active="Sitede Aktif" data-text-delete="Sil"
+                    data-text-deleted="Silindi" data-text-visible="Sitede Görünüyor" data-text-edit="Düzenle"></div>
+
+                <div class="header-actions">
+
+                    <a href="../index.html" target="_blank" class="btn-icon" title="Siteye Git">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <button class="btn-icon notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+
+                    <div class="user-profile" data-action="navigateTo" data-href="profile.html">
+                        <img src="https://ui-avatars.com/api/?name=Baran+D&background=6366f1&color=fff" alt="Admin">
+                        <div class="user-info">
+                            <h4>Baran Dasdemir</h4>
+                            <span>Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Work Experience -->
+            <div class="card">
+                <div class="card-header">
+                    <h3><i class="fas fa-briefcase" class="briefcase-icon"></i>İş Deneyimi</h3>
+                    <a href="resume-editor.html?type=job" class="btn btn-sm btn-outline">
+                        <i class="fas fa-plus"></i> Ekle
+                    </a>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Pozisyon</th>
+                                <th>Şirket</th>
+                                <th>Tarih</th>
+                                <th>Görünürlük</th>
+                                <th>Durum</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Senior Full-Stack Developer</strong></td>
+                                <td>Tech Startup XYZ</td>
+                                <td>2022 - Günümüz</td>
+                                <td><span class="status-badge active">Sitede Aktif</span></td>
+                                <td><span class="status-badge active">Devam Ediyor</span></td>
+                                <td>
+                                    <div class="action-btns">
+                                        <a href="resume-editor.html?type=job&id=1" class="action-btn edit"
+                                            title="Düzenle">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                        <button class="action-btn delete" title="Sil" data-action="deleteRow">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        <button class="action-btn restore hidden" title="Geri Yükle"
+                                            data-action="restoreRow">
+                                            <i class="fas fa-undo"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="deleted-item">
+                                <td><strong>Mobile App Developer</strong></td>
+                                <td>ABC Software</td>
+                                <td>2020 - 2022</td>
+                                <td><span class="status-badge danger">Silindi</span></td>
+                                <td><span class="status-badge draft">Geçmiş</span></td>
+                                <td>
+                                    <div class="action-btns">
+                                        <a href="resume-editor.html?type=job&id=2&deleted=true" class="action-btn edit"
+                                            title="Detaylar">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                        <button class="action-btn delete hidden" title="Sil" data-action="deleteRow">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        <button class="action-btn restore" title="Geri Yükle" data-action="restoreRow">
+                                            <i class="fas fa-undo"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Frontend Developer</strong></td>
+                                <td>Digital Agency</td>
+                                <td>2019 - 2020</td>
+                                <td><span class="status-badge active">Sitede Aktif</span></td>
+                                <td><span class="status-badge draft">Geçmiş</span></td>
+                                <td>
+                                    <div class="action-btns">
+                                        <a href="resume-editor.html?type=job&id=3" class="action-btn edit"
+                                            title="Düzenle">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                        <button class="action-btn delete" title="Sil" data-action="deleteRow">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        <button class="action-btn restore hidden" title="Geri Yükle"
+                                            data-action="restoreRow">
+                                            <i class="fas fa-undo"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="card">
+                <div class="card-header">
+                    <h3><i class="fas fa-graduation-cap" class="graduation-icon"></i>Eğitim</h3>
+                    <a href="resume-editor.html?type=education" class="btn btn-sm btn-outline">
+                        <i class="fas fa-plus"></i> Ekle
+                    </a>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Bölüm</th>
+                                <th>Okul</th>
+                                <th>Tarih</th>
+                                <th>Görünürlük</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Bilgisayar Mühendisliği</strong></td>
+                                <td>İstanbul Teknik Üniversitesi</td>
+                                <td>2015 - 2019</td>
+                                <td><span class="status-badge active">Sitede Aktif</span></td>
+                                <td>
+                                    <div class="action-btns">
+                                        <button class="action-btn edit" title="Düzenle" data-action="editRow"><i
+                                                class="fas fa-pen"></i></button>
+                                        <button class="action-btn delete" title="Sil" data-action="deleteRow"><i
+                                                class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="deleted-item">
+                                <td><strong>Fen Lisesi</strong></td>
+                                <td>Ankara Fen Lisesi</td>
+                                <td>2011 - 2015</td>
+                                <td><span class="status-badge danger">Silindi</span></td>
+                                <td>
+                                    <div class="action-btns">
+                                        <button class="action-btn edit" title="Detaylar" data-action="editRow"><i
+                                                class="fas fa-pen"></i></button>
+                                        <button class="action-btn restore" title="Geri Yükle"
+                                            data-action="restoreRow"><i class="fas fa-undo"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Certificates -->
+            <div class="card">
+                <div class="card-header">
+                    <h3><i class="fas fa-certificate" class="certificate-icon"></i>Sertifikalar</h3>
+                    <button class="btn btn-sm btn-outline" data-action="showExperienceForm" data-type="Sertifika">
+                        <i class="fas fa-plus"></i>
+                        Ekle
+                    </button>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Sertifika Adı</th>
+                                <th>Kurum</th>
+                                <th>Tarih</th>
+                                <th>Görünürlük</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>AWS Solutions Architect</strong></td>
+                                <td>Amazon Web Services</td>
+                                <td>2023</td>
+                                <td><span class="status-badge active">Sitede Aktif</span></td>
+                                <td>
+                                    <div class="action-btns">
+                                        <button class="action-btn edit" title="Düzenle" data-action="editRow"><i
+                                                class="fas fa-pen"></i></button>
+                                        <button class="action-btn delete" title="Sil" data-action="deleteRow"><i
+                                                class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Google Flutter Certification</strong></td>
+                                <td>Google Developers</td>
+                                <td>2022</td>
+                                <td><span class="status-badge active">Sitede Aktif</span></td>
+                                <td>
+                                    <div class="action-btns">
+                                        <button class="action-btn edit" title="Düzenle" data-action="editRow"><i
+                                                class="fas fa-pen"></i></button>
+                                        <button class="action-btn delete" title="Sil" data-action="deleteRow"><i
+                                                class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Meta Front-End Developer</strong></td>
+                                <td>Meta (Coursera)</td>
+                                <td>2021</td>
+                                <td><span class="status-badge active">Sitede Aktif</span></td>
+                                <td>
+                                    <div class="action-btns">
+                                        <button class="action-btn edit" title="Düzenle" data-action="editRow"><i
+                                                class="fas fa-pen"></i></button>
+                                        <button class="action-btn delete" title="Sil" data-action="deleteRow"><i
+                                                class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="deleted-item">
+                                <td><strong>MongoDB Database Admin</strong></td>
+                                <td>MongoDB University</td>
+                                <td>2020</td>
+                                <td><span class="status-badge danger">Silindi</span></td>
+                                <td>
+                                    <div class="action-btns">
+                                        <button class="action-btn edit" title="Düzenle" data-action="editRow"><i
+                                                class="fas fa-pen"></i></button>
+                                        <button class="action-btn restore" title="Geri Yükle"
+                                            data-action="restoreRow"><i class="fas fa-undo"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Add Experience Modal -->
+
+            <footer class="admin-footer">
+                <div>&copy; 2024 Baran Dasdemir. Tüm hakları saklıdır.</div>
+                <div>v1.0.0</div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/modules/pages.js"></script>
+    <script src="js/modules/notifications.js"></script>
+    <script src="js/modules/auth.js"></script>
+    <script src="js/modules/ui.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/modules/resume.js"></script>
+</body>
+
+</html>

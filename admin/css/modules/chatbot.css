@@ -1,0 +1,81 @@
+.chatbot-page .content-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+@media (max-width: 992px) {
+    .chatbot-page .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.chatbot-page .card-header h3 i {
+    margin-right: 10px;
+}
+
+.chatbot-page .chatbot-textarea {
+    min-height: 100px;
+}
+
+.chatbot-page .prompt-textarea {
+    min-height: 250px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.chatbot-page .form-actions {
+    margin-top: 20px;
+}
+
+.chatbot-page .input-hint {
+    margin-bottom: 10px;
+}
+
+.chatbot-page .api-key-toggle {
+    position: relative;
+}
+
+.chatbot-page .api-key-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--admin-text-muted);
+    cursor: pointer;
+}
+
+.chatbot-page #alertModal {
+    display: none;
+    z-index: 10003;
+}
+
+.chatbot-page #alertModal.visible {
+    display: flex;
+}
+
+.chatbot-page .alert-modal-content {
+    max-width: 300px;
+    text-align: center;
+}
+
+.chatbot-page .alert-modal-body {
+    padding: 30px 20px;
+}
+
+.chatbot-page .alert-icon {
+    font-size: 3rem;
+    color: var(--admin-info);
+    margin-bottom: 20px;
+}
+
+.chatbot-page #alertMessage {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.chatbot-page .alert-button {
+    width: 100%;
+}

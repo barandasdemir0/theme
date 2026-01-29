@@ -1,0 +1,180 @@
+/* Testimonials Section */
+.testimonials-section {
+    position: relative;
+    overflow: visible;
+    /* Fix: Allow arrows to hang outside without being clipped */
+}
+
+.testimonial-card {
+    background: transparent;
+    /* Removed box background */
+    border: none;
+    /* Removed border */
+    border-radius: var(--border-radius-lg);
+    padding: 3rem !important;
+    /* Reverted padding */
+    /* Increased side padding for arrows */
+    position: relative;
+    transition: transform 0.3s ease;
+    /* Keep slight movement or remove if wanted */
+    margin: 0 1rem;
+}
+
+.testimonial-card:hover {
+    transform: none;
+    /* No movement on hover since it's not a card anymore */
+    box-shadow: none;
+    /* No shadow */
+}
+
+/* Testimonial Avatar - Circular */
+.testimonial-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.testimonial-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* ... (lines 7-52 unchanged) ... */
+
+/* Carousel Controls */
+.testimonials-section .carousel-control-prev,
+.testimonials-section .carousel-control-next {
+    width: 50px;
+    /* Reverted size */
+    height: 50px;
+    background: var(--bg-secondary);
+    /* Back to secondary for contrast inside card */
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    transition: all 0.3s ease;
+    z-index: 5;
+
+    /* CRITICAL FIX: Center the icon */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    /* Ensure no padding affects centering */
+}
+
+.testimonials-section .carousel-control-prev:hover,
+.testimonials-section .carousel-control-next:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.testimonials-section .carousel-control-prev {
+    left: -25px;
+    /* Reverted position */
+}
+
+.testimonials-section .carousel-control-next {
+    right: -25px;
+    /* Reverted position */
+}
+
+/* Ensure ::after (the icon) has no weird spacing */
+.testimonials-section .carousel-control-prev::after,
+.testimonials-section .carousel-control-next::after {
+    display: block;
+    /* Ensure it behaves nicely in flex */
+    line-height: 1;
+    /* Reset line-height to avoid vertical offset */
+    margin: 0;
+}
+
+@media (max-width: 991px) {
+    .testimonials-section .carousel-control-prev {
+        left: 0;
+    }
+
+    .testimonials-section .carousel-control-next {
+        right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial-card {
+        padding: 3rem 2rem !important;
+        /* Smaller padding on mobile */
+    }
+
+    .testimonials-section .carousel-control-prev,
+    .testimonials-section .carousel-control-next {
+        width: 35px;
+        height: 35px;
+        top: auto;
+        bottom: 10px;
+        /* Move to bottom on mobile to not cover text */
+        transform: none;
+    }
+
+    .testimonials-section .carousel-control-prev {
+        left: 20px;
+    }
+
+    .testimonials-section .carousel-control-next {
+        right: 20px;
+        left: auto;
+    }
+}
+
+.testimonials-section .carousel-control-prev-icon,
+.testimonials-section .carousel-control-next-icon {
+    display: none !important;
+    /* CRITICAL: Hide this so it doesn't mess up flex centering of the parent's ::after pseudo-element */
+}
+
+/* Use FontAwesome icons instead of SVG for better control */
+.testimonials-section .carousel-control-prev::after {
+    content: '\f053';
+    /* fa-chevron-left */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.testimonials-section .carousel-control-next::after {
+    content: '\f054';
+    /* fa-chevron-right */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.testimonials-section .carousel-control-prev:hover::after,
+.testimonials-section .carousel-control-next:hover::after {
+    color: #fff;
+}
+
+/* Indicators */
+.testimonials-section .carousel-indicators [data-bs-target] {
+    background-color: var(--primary-color);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    margin: 0 6px;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.testimonials-section .carousel-indicators .active {
+    opacity: 1;
+    transform: scale(1.2);
+}

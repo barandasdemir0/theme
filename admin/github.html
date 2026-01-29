@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <script src="js/theme-init.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repoları | Portfolio Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/modules/variables.css">
+    <link rel="stylesheet" href="css/modules/global.css">
+    <link rel="stylesheet" href="css/modules/layout.css">
+    <link rel="stylesheet" href="css/modules/components.css">
+    <link rel="stylesheet" href="css/modules/notifications.css">
+    <link rel="stylesheet" href="css/modules/github.css">
+    <link rel="stylesheet" href="css/modules/login.css">
+    <link rel="stylesheet" href="css/modules/messages.css">
+    <!-- HTMX for SPA-like behavior (only loaded on server, not file://) -->
+    <script src="js/htmx-loader.js"></script>
+</head>
+
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2><span>Admin</span> Panel</h2>
+                <p>Portfolio Yönetimi</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">
+                    <p class="menu-section-title">Sayfa Yönetimi</p>
+                    <a href="profile.html" class="menu-item">
+                        <i class="fas fa-home"></i>
+                        <span>Hero & Profil</span>
+                    </a>
+                    <a href="about.html" class="menu-item">
+                        <i class="fas fa-user"></i>
+                        <span>Hakkımda</span>
+                    </a>
+                    <a href="resume.html" class="menu-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Özgeçmiş</span>
+                    </a>
+                    <a href="contact.html" class="menu-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>İletişim</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">İçerik Yönetimi</p>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="messages.html" class="menu-item">
+                        <i class="fas fa-inbox"></i>
+                        <span>Mesajlar</span>
+                    </a>
+                    <a href="projects.html" class="menu-item">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Projeler</span>
+                    </a>
+                    <a href="blog.html" class="menu-item">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog Yazıları</span>
+                    </a>
+                    <a href="guestbook.html" class="menu-item">
+                        <i class="fas fa-comments"></i>
+                        <span>Ziyaretçi Defteri</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">Ayarlar</p>
+                    <a href="categories.html" class="menu-item">
+                        <i class="fas fa-tags"></i>
+                        <span>Kategoriler</span>
+                    </a>
+                    <a href="skills.html" class="menu-item">
+                        <i class="fas fa-code"></i>
+                        <span>Yetenekler</span>
+                    </a>
+                    <a href="github.html" class="menu-item active">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Repoları</span>
+                    </a>
+                    <a href="settings.html" class="menu-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Site Ayarları</span>
+                    </a>
+                    <a href="security.html" class="menu-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Güvenlik</span>
+                    </a>
+                    <a href="chatbot.html" class="menu-item">
+                        <i class="fas fa-robot"></i>
+                        <span>Chatbot</span>
+                    </a>
+                    <a href="notifications.html" class="menu-item">
+                        <i class="fas fa-bell"></i>
+                        <span>Bildirimler</span>
+                    </a>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Çıkış Yap</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <header class="admin-header">
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                <div class="page-title">
+                    <h1>GitHub Repoları</h1>
+                    <p>Portfolyonuzda gösterilecek repoları seçin (Maks. 4)</p>
+                </div>
+
+                <div class="header-actions">
+
+                    <a href="../index.html" target="_blank" class="btn-icon" title="Siteye Git">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <button class="btn-icon notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+
+                    <div class="user-profile" data-action="navigateTo" data-href="profile.html">
+                        <img src="https://ui-avatars.com/api/?name=Baran+D&background=6366f1&color=fff" alt="Admin">
+                        <div class="user-info">
+                            <h4>Baran Dasdemir</h4>
+                            <span>Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Fetch Section -->
+            <div class="card mb-25">
+                <div class="card-header">
+                    <h3><i class="fab fa-github mr-10"></i>GitHub Hesabı</h3>
+                </div>
+                <div class="p-20">
+                    <div class="fetch-section">
+                        <input type="text" id="githubUsername" class="form-control" placeholder="GitHub kullanıcı adı"
+                            value="barandasdemir0">
+                        <button class="btn btn-primary" id="fetchReposBtn" hx-post="/api/github/fetch"
+                            hx-target="#reposGrid" hx-indicator="#fetchReposBtn i"
+                            data-msg-static="Statik modda API isteği devre dışı bırakıldı.">
+                            <i class="fas fa-sync-alt"></i>
+                            Repoları Çek
+                        </button>
+                        <div id="selectedCount" class="selected-count hidden">
+                            <i class="fas fa-check-circle"></i>
+                            <span>0</span>/4 repo seçili
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repos Grid -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Repolar</h3>
+                    <button class="btn btn-success hidden" id="publishBtn"
+                        data-msg-warning="Lütfen en az bir repo seçin." data-text-loading="Kaydediliyor..."
+                        data-text-default="Seçilenleri Yayınla" data-msg-success="{0} repo yayınlandı: {1}">
+                        <i class="fas fa-rocket"></i>
+                        Seçilenleri Yayınla
+                    </button>
+                </div>
+                <div class="p-20">
+                    <div id="reposContainer">
+                        <div class="max-selection-warning mb-25">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Maksimum <strong>4</strong> repo seçebilirsiniz.</span>
+                        </div>
+                        <div class="repos-grid" id="reposGrid" data-msg-limit="Maksimum {0} repo seçebilirsiniz.">
+                            <!-- Static Repo 1 -->
+                            <div class="repo-card" data-repo-id="101" data-repo-name="Portfolio-v2">
+                                <div class="repo-header">
+                                    <i class="fas fa-book text-muted"></i>
+                                    <span class="repo-name">Portfolio-v2</span>
+                                </div>
+                                <p class="repo-description">Kişisel portfolyo web sitesi, ASP.NET Core ve Vanillla JS
+                                    ile geliştirildi.</p>
+                                <div class="repo-stats">
+                                    <span class="language-badge csharp">C#</span>
+                                    <span class="repo-stat">
+                                        <i class="fas fa-star"></i>
+                                        12
+                                    </span>
+                                    <span class="repo-stat">
+                                        <i class="fas fa-code-branch"></i>
+                                        4
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Static Repo 2 -->
+                            <div class="repo-card" data-repo-id="102" data-repo-name="E-Commerce-API">
+                                <div class="repo-header">
+                                    <i class="fas fa-book text-muted"></i>
+                                    <span class="repo-name">E-Commerce-API</span>
+                                </div>
+                                <p class="repo-description">Microservices mimarisi ile geliştirilmiş E-Ticaret backend
+                                    API projesi.</p>
+                                <div class="repo-stats">
+                                    <span class="language-badge javascript">JavaScript</span>
+                                    <span class="repo-stat">
+                                        <i class="fas fa-star"></i>
+                                        8
+                                    </span>
+                                    <span class="repo-stat">
+                                        <i class="fas fa-code-branch"></i>
+                                        2
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Static Repo 3 -->
+                            <div class="repo-card" data-repo-id="103" data-repo-name="Antigravity-Agent">
+                                <div class="repo-header">
+                                    <i class="fas fa-book text-muted"></i>
+                                    <span class="repo-name">Antigravity-Agent</span>
+                                </div>
+                                <p class="repo-description">Yapay zeka tabanlı kodlama asistanı ve otomasyon aracı.</p>
+                                <div class="repo-stats">
+                                    <span class="language-badge python">Python</span>
+                                    <span class="repo-stat">
+                                        <i class="fas fa-star"></i>
+                                        25
+                                    </span>
+                                    <span class="repo-stat">
+                                        <i class="fas fa-code-branch"></i>
+                                        10
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Static Repo 4 -->
+                            <div class="repo-card" data-repo-id="104" data-repo-name="React-Dashboard">
+                                <div class="repo-header">
+                                    <i class="fas fa-book text-muted"></i>
+                                    <span class="repo-name">React-Dashboard</span>
+                                </div>
+                                <p class="repo-description">Modern ve responsive admin paneli dashboard şablonu.</p>
+                                <div class="repo-stats">
+                                    <span class="language-badge typescript">TypeScript</span>
+                                    <span class="repo-stat">
+                                        <i class="fas fa-star"></i>
+                                        15
+                                    </span>
+                                    <span class="repo-stat">
+                                        <i class="fas fa-code-branch"></i>
+                                        5
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-center" hx-target="#reposGrid" hx-push-url="true">
+                    <button class="pagination-btn" hx-get="/api/github/repos?page=prev" id="prevPage">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active" hx-get="/api/github/repos?page=1">1</button>
+                    <button class="pagination-btn" hx-get="/api/github/repos?page=2">2</button>
+                    <button class="pagination-btn" hx-get="/api/github/repos?page=3">3</button>
+                    <button class="pagination-btn" hx-get="/api/github/repos?page=4">4</button>
+                    <button class="pagination-btn" hx-get="/api/github/repos?page=5">5</button>
+                    <button class="pagination-btn" hx-get="/api/github/repos?page=next" id="nextPage">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <footer class="admin-footer">
+                <div>&copy; 2024 Baran Dasdemir. Tüm hakları saklıdır.</div>
+                <div>v1.0.0</div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/modules/pages.js"></script>
+    <script src="js/modules/notifications.js"></script>
+    <script src="js/modules/auth.js"></script>
+    <script src="js/modules/ui.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/modules/github.js"></script>
+</body>
+
+</html>

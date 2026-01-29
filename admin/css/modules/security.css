@@ -1,0 +1,39 @@
+.security-page .content-grid {
+    display: block;
+}
+
+.security-page .card-header h3 i {
+    margin-right: 10px;
+}
+
+.security-page .form-group {
+    position: relative;
+}
+
+.security-page .password-wrapper {
+    position: relative;
+}
+
+.security-page .password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--admin-text-muted);
+    cursor: pointer;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.security-page .password-toggle:hover {
+    color: var(--admin-text);
+}
+
+.security-page .btn-primary {
+    width: 100%;
+    margin-top: 10px;
+}

@@ -1,0 +1,378 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <script src="js/theme-init.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Portfolio Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/modules/variables.css">
+    <link rel="stylesheet" href="css/modules/global.css">
+    <link rel="stylesheet" href="css/modules/layout.css">
+    <link rel="stylesheet" href="css/modules/components.css">
+    <link rel="stylesheet" href="css/modules/notifications.css">
+    <link rel="stylesheet" href="css/modules/login.css">
+    <link rel="stylesheet" href="css/modules/index.css">
+</head>
+
+<body class="index-page dashboard-page-mod">
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2><span>Admin</span> Panel</h2>
+                <p>Portfolio Yönetimi</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">
+                    <p class="menu-section-title">Sayfa Yönetimi</p>
+                    <a href="profile.html" class="menu-item">
+                        <i class="fas fa-home"></i>
+                        <span>Hero & Profil</span>
+                    </a>
+                    <a href="about.html" class="menu-item">
+                        <i class="fas fa-user"></i>
+                        <span>Hakkımda</span>
+                    </a>
+                    <a href="resume.html" class="menu-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Özgeçmiş</span>
+                    </a>
+                    <a href="contact.html" class="menu-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>İletişim</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">İçerik Yönetimi</p>
+                    <a href="dashboard.html" class="menu-item active">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="messages.html" class="menu-item">
+                        <i class="fas fa-inbox"></i>
+                        <span>Mesajlar</span>
+                    </a>
+                    <a href="projects.html" class="menu-item">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Projeler</span>
+                    </a>
+                    <a href="blog.html" class="menu-item">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog Yazıları</span>
+                    </a>
+                    <a href="guestbook.html" class="menu-item">
+                        <i class="fas fa-comments"></i>
+                        <span>Ziyaretçi Defteri</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">Ayarlar</p>
+                    <a href="categories.html" class="menu-item">
+                        <i class="fas fa-tags"></i>
+                        <span>Kategoriler</span>
+                    </a>
+                    <a href="skills.html" class="menu-item">
+                        <i class="fas fa-code"></i>
+                        <span>Yetenekler</span>
+                    </a>
+                    <a href="github.html" class="menu-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Repoları</span>
+                    </a>
+                    <a href="settings.html" class="menu-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Site Ayarları</span>
+                    </a>
+                    <a href="security.html" class="menu-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Güvenlik</span>
+                    </a>
+                    <a href="chatbot.html" class="menu-item">
+                        <i class="fas fa-robot"></i>
+                        <span>Chatbot</span>
+                    </a>
+                    <a href="notifications.html" class="menu-item">
+                        <i class="fas fa-bell"></i>
+                        <span>Bildirimler</span>
+                    </a>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Çıkış Yap</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <header class="admin-header">
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                <div class="page-title">
+                    <h1>Dashboard</h1>
+                    <p>Hoş geldiniz! Portfolio istatistiklerinize göz atın.</p>
+                </div>
+
+                <div class="header-actions">
+
+                    <a href="../index.html" target="_blank" class="btn-icon" title="Siteye Git">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <button class="btn-icon notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+
+                    <div class="user-profile" data-action="navigateTo" data-href="profile.html">
+                        <img src="https://ui-avatars.com/api/?name=Baran+D&background=6366f1&color=fff" alt="Admin">
+                        <div class="user-info">
+                            <h4>Baran Dasdemir</h4>
+                            <span>Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon projects">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>12</h3>
+                        <p>Toplam Proje</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon blog">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>8</h3>
+                        <p>Blog Yazısı</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon visitors">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>1,248</h3>
+                        <p>Bu Ay Ziyaretçi</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon messages">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>24</h3>
+                        <p>Yeni Mesaj</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Grid (New Strict Grid Layout) -->
+            <div class="content-grid dashboard-grid-layout">
+                <!-- 1. Projects Card -->
+                <div class="card card-projects">
+                    <div class="card-header">
+                        <h3>Son Projeler</h3>
+                        <a href="projects.html" class="btn btn-sm btn-outline">Tümünü Gör</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Proje Adı</th>
+                                    <th>Kategori</th>
+                                    <th>Durum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>E-Ticaret Platformu</td>
+                                    <td>Web Uygulama</td>
+                                    <td><span class="status-badge active">Yayında</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Fitness Tracker App</td>
+                                    <td>Mobil Uygulama</td>
+                                    <td><span class="status-badge active">Yayında</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Analytics Dashboard</td>
+                                    <td>Micro SaaS</td>
+                                    <td><span class="status-badge draft">Taslak</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 2. Blogs Card -->
+                <div class="card card-blogs">
+                    <div class="card-header">
+                        <h3>Son Blog Yazıları</h3>
+                        <a href="blog.html" class="btn btn-sm btn-outline">Tümünü Gör</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Başlık</th>
+                                    <th>Kategori</th>
+                                    <th>Durum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Modern CSS Teknikleri</td>
+                                    <td>Web Geliştirme</td>
+                                    <td><span class="status-badge active">Yayında</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Yapay Zeka ve Gelecek</td>
+                                    <td>Teknoloji</td>
+                                    <td><span class="status-badge draft">Taslak</span></td>
+                                </tr>
+                                <tr>
+                                    <td>React Hooks Rehberi</td>
+                                    <td>React</td>
+                                    <td><span class="status-badge active">Yayında</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3. Quick Actions Card (Full Height) -->
+                <div class="card quick-actions-card">
+                    <div class="card-header">
+                        <h3>Hızlı İşlemler</h3>
+                    </div>
+                    <div class="quick-actions">
+                        <a href="projects.html?action=new" class="quick-action-btn">
+                            <i class="fas fa-plus"></i>
+                            <div>
+                                <strong>Yeni Proje Ekle</strong>
+                                <p>Portfolio'ya yeni proje</p>
+                            </div>
+                        </a>
+                        <a href="blog.html?action=new" class="quick-action-btn">
+                            <i class="fas fa-pen"></i>
+                            <div>
+                                <strong>Blog Yazısı Yaz</strong>
+                                <p>Yeni makale oluştur</p>
+                            </div>
+                        </a>
+                        <a href="messages.html?action=new" class="quick-action-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            <div>
+                                <strong>Mesaj Gönder</strong>
+                                <p>Hızlı e-posta gönder</p>
+                            </div>
+                        </a>
+                        <a href="categories.html" class="quick-action-btn">
+                            <i class="fas fa-tags"></i>
+                            <div>
+                                <strong>Kategori Yönetimi</strong>
+                                <p>Etiketleri düzenle</p>
+                            </div>
+                        </a>
+                        <a href="github.html" class="quick-action-btn">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <strong>Github Senkronizasyonu</strong>
+                                <p>Repoları güncelle</p>
+                            </div>
+                        </a>
+                        <a href="settings.html" class="quick-action-btn">
+                            <i class="fas fa-toggle-on"></i>
+                            <div>
+                                <strong>Müsaitlik Durumu</strong>
+                                <p>Şu an: <span class="status-text">Müsait</span></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Comments Card -->
+                <div class="card card-comments">
+                    <div class="card-header">
+                        <h3>Son Yorumlar</h3>
+                        <a href="guestbook.html" class="btn btn-sm btn-outline">Tümü</a>
+                    </div>
+                    <div class="dashboard-list">
+                        <div class="dashboard-item">
+                            <div class="item-content">
+                                <strong class="item-name">Mehmet K.</strong>
+                                <p class="item-text">"Yazınızdaki CSS grid örnekleri çok faydalı oldu..."</p>
+                            </div>
+                        </div>
+                        <div class="dashboard-item">
+                            <div class="item-content">
+                                <strong class="item-name">Ayşe Y.</strong>
+                                <p class="item-text">"Link kırık görünüyor, kontrol edebilir misiniz?"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Messages Card -->
+                <div class="card card-messages">
+                    <div class="card-header">
+                        <h3>Son Mesajlar</h3>
+                        <a href="messages.html" class="btn btn-sm btn-outline">Tümü</a>
+                    </div>
+                    <div class="dashboard-list">
+                        <div class="dashboard-item message-item">
+                            <div class="message-avatar avatar-blue">AD</div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <strong class="item-name">Ali Demir</strong>
+                                    <span class="item-meta">2s</span>
+                                </div>
+                                <span class="item-text">Freelance iş teklifi hakkında görüşmek...</span>
+                            </div>
+                        </div>
+                        <div class="dashboard-item message-item">
+                            <div class="message-avatar avatar-green">ZO</div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <strong class="item-name">Zeynep O.</strong>
+                                    <span class="item-meta">1g</span>
+                                </div>
+                                <span class="item-text">Merhaba, sitenizi çok beğendim...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="admin-footer">
+                <div>&copy; 2024 Baran Dasdemir. Tüm hakları saklıdır.</div>
+                <div>v1.0.0</div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/modules/pages.js"></script>
+    <script src="js/modules/notifications.js"></script>
+    <script src="js/modules/auth.js"></script>
+    <script src="js/modules/ui.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

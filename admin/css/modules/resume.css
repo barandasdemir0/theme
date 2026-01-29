@@ -1,0 +1,92 @@
+.resume-page .card {
+    margin-top: 25px;
+}
+
+.resume-page .card:first-of-type {
+    margin-top: 0;
+}
+
+.resume-page .card-header h3 i {
+    margin-right: 10px;
+}
+
+.resume-page .briefcase-icon {
+    color: var(--admin-primary);
+}
+
+.resume-page .graduation-icon {
+    color: var(--admin-secondary);
+}
+
+.resume-page .certificate-icon {
+    color: var(--admin-warning);
+}
+
+
+
+/* Date Split Selects */
+.date-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .admin-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Ensure restore button is visible if active */
+    #btnRestore[style*="inline-flex"] {
+        display: flex !important;
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .resume-page .admin-table th:nth-child(2),
+    .resume-page .admin-table td:nth-child(2) {
+        display: none;
+        /* Hide date column on very small screens if needed */
+    }
+
+    .resume-page .card {
+        padding: 15px;
+    }
+
+    .resume-page .card {
+        padding: 15px;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.d-inline-flex {
+    display: inline-flex !important;
+}

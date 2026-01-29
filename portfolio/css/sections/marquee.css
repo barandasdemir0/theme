@@ -1,0 +1,205 @@
+/* ============================================
+   SECTION - Tech Stack Marquee
+   ============================================ */
+.marquee-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+.marquee-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+}
+
+.marquee-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.marquee-title h3 {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.marquee-title h3::before,
+.marquee-title h3::after {
+    content: '—';
+    margin: 0 15px;
+    color: var(--primary-color);
+}
+
+.marquee-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-secondary), transparent);
+}
+
+.marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-secondary), transparent);
+}
+
+.marquee-content {
+    display: flex;
+    gap: 60px;
+    animation: marquee 30s linear infinite;
+}
+
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+.marquee-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: var(--transition-fast);
+}
+
+.marquee-item:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.marquee-item i {
+    font-size: 3rem;
+    color: var(--text-primary);
+}
+
+.marquee-item span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Colored Icons */
+.marquee-item .fa-html5 {
+    color: #e34c26;
+}
+
+.marquee-item .fa-css3-alt {
+    color: #264de4;
+}
+
+.marquee-item .fa-js {
+    color: #f7df1e;
+}
+
+.marquee-item .fa-react {
+    color: #61dafb;
+}
+
+.marquee-item .fa-angular {
+    color: #dd0031;
+}
+
+.marquee-item .fa-vuejs {
+    color: #4fc08d;
+}
+
+.marquee-item .fa-node-js {
+    color: #68a063;
+}
+
+.marquee-item .fa-python {
+    color: #3776ab;
+}
+
+.marquee-item .fa-php {
+    color: #777bb4;
+}
+
+.marquee-item .fa-java {
+    color: #007396;
+}
+
+.marquee-item .fa-docker {
+    color: #2496ed;
+}
+
+.marquee-item .fa-aws {
+    color: #ff9900;
+}
+
+.marquee-item .fa-git-alt {
+    color: #f05032;
+}
+
+.marquee-item .fa-github {
+    color: var(--text-primary);
+}
+
+/* Light theme specific icon colors */
+[data-theme="light"] .marquee-item .fa-github {
+    color: #24292e;
+}
+
+.marquee-item .fa-figma {
+    color: #f24e1e;
+}
+
+.marquee-item .fa-bootstrap {
+    color: #7952b3;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .marquee-item i {
+        font-size: 2.5rem;
+    }
+
+    .marquee-content {
+        gap: 40px;
+    }
+}

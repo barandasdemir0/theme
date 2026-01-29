@@ -1,0 +1,218 @@
+/* ============================================
+   SECTION - GitHub & Open Source
+   ============================================ */
+.github-section {
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.github-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.repo-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-lg);
+    padding: 30px;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.repo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+    border-color: var(--primary-color);
+}
+
+.repo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.repo-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.repo-link {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    transition: var(--transition-fast);
+}
+
+.repo-link:hover {
+    color: var(--primary-color);
+}
+
+.repo-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.repo-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    flex-grow: 1;
+    line-height: 1.6;
+}
+
+.repo-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 15px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.repo-stats {
+    display: flex;
+    gap: 15px;
+}
+
+.repo-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.repo-stat i {
+    font-size: 0.9rem;
+}
+
+.repo-lang {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lang-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* GitHub Card (Static Fallback) */
+.github-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-lg);
+    padding: 30px;
+    transition: var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+}
+
+.github-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+    border-color: var(--primary-color);
+}
+
+.github-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.github-card-header i {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.github-card-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.github-card-header h4 a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.github-card-header h4 a:hover {
+    color: var(--primary-color);
+}
+
+.github-card-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.github-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--glass-border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.github-lang {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.github-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Loading State */
+.github-loading {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Error State */
+.github-error {
+    text-align: center;
+    padding: 40px 0;
+    color: #ef4444;
+}
+
+.github-error i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    display: block;
+}

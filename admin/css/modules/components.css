@@ -1,0 +1,991 @@
+/* Notification Button */
+.notification-btn {
+    position: relative;
+    /* Inherits btn-icon styles via HTML class */
+}
+
+.notification-btn:hover {
+    border-color: var(--admin-primary);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 18px;
+    height: 18px;
+    background: var(--admin-danger);
+    border-radius: 50%;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* User Profile */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 15px 8px 8px;
+    background: var(--admin-card);
+    border: 1px solid var(--admin-border);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.user-info h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.user-info span {
+    font-size: 0.75rem;
+    color: var(--admin-text-muted);
+}
+
+/* Stats Cards */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: var(--admin-card);
+    border: 1px solid var(--admin-border);
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--admin-primary);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stat-icon.projects {
+    background: rgba(99, 102, 241, 0.2);
+    color: var(--admin-primary);
+}
+
+.stat-icon.blog {
+    background: rgba(139, 92, 246, 0.2);
+    color: var(--admin-secondary);
+}
+
+.stat-icon.visitors {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--admin-success);
+}
+
+.stat-icon.messages {
+    background: rgba(245, 158, 11, 0.2);
+    color: var(--admin-warning);
+}
+
+.stat-info h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.stat-info p {
+    color: var(--admin-text-muted);
+    font-size: 0.9rem;
+}
+
+/* Content Cards */
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+}
+
+.card {
+    background: var(--admin-card);
+    border: 1px solid var(--admin-border);
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Buttons */
+@media (max-width: 640px) {
+    .card-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .card-header>div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .card-header h3 {
+        margin-bottom: 5px;
+    }
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+}
+
+.btn-primary {
+    background: transparent;
+    border: 2px solid var(--admin-primary);
+    color: var(--admin-primary);
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: var(--admin-primary) !important;
+    color: #fff !important;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+}
+
+/* When toast is active: normal state is empty, only show color on hover */
+.btn-primary.toast-active {
+    background: transparent !important;
+    color: var(--admin-primary) !important;
+}
+
+.btn-primary.toast-active:hover {
+    background: var(--admin-primary) !important;
+    color: #fff !important;
+}
+
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:focus-visible {
+    background: transparent;
+    color: var(--admin-primary);
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-primary:active:hover,
+.btn-primary:focus:hover {
+    background: var(--admin-primary) !important;
+    color: #fff !important;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--admin-border);
+    color: var(--admin-text);
+}
+
+.btn-outline:hover {
+    border-color: var(--admin-primary);
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.btn-success {
+    background: transparent;
+    border: 2px solid var(--admin-success);
+    color: var(--admin-success);
+}
+
+.btn-success:hover {
+    background: var(--admin-success) !important;
+    color: #fff !important;
+}
+
+/* When toast is active: normal state is empty, only show color on hover */
+.btn-success.toast-active {
+    background: transparent !important;
+    color: var(--admin-success) !important;
+}
+
+.btn-success.toast-active:hover {
+    background: var(--admin-success) !important;
+    color: #fff !important;
+}
+
+.btn-success:active,
+.btn-success:focus,
+.btn-success:focus-visible {
+    background: transparent;
+    color: var(--admin-success);
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-success:active:hover,
+.btn-success:focus:hover {
+    background: var(--admin-success) !important;
+    color: #fff !important;
+}
+
+.btn-secondary {
+    background: var(--admin-card);
+    border: 1px solid var(--admin-border);
+    color: var(--admin-text);
+}
+
+.btn-danger {
+    background: transparent;
+    border: 2px solid var(--admin-danger);
+    color: var(--admin-danger);
+}
+
+.btn-danger:hover {
+    background: var(--admin-danger) !important;
+    color: #fff !important;
+}
+
+/* When toast is active: normal state is empty, only show color on hover */
+.btn-danger.toast-active {
+    background: transparent !important;
+    color: var(--admin-danger) !important;
+}
+
+.btn-danger.toast-active:hover {
+    background: var(--admin-danger) !important;
+    color: #fff !important;
+}
+
+.btn-danger:active,
+.btn-danger:focus,
+.btn-danger:focus-visible {
+    background: transparent;
+    color: var(--admin-danger);
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-danger:active:hover,
+.btn-danger:focus:hover {
+    background: var(--admin-danger) !important;
+    color: #fff !important;
+}
+
+.btn-warning {
+    background: transparent;
+    border: 2px solid var(--admin-warning);
+    color: var(--admin-warning);
+}
+
+.btn-warning:hover {
+    background: var(--admin-warning) !important;
+    color: #fff !important;
+}
+
+/* When toast is active: normal state is empty, only show color on hover */
+.btn-warning.toast-active {
+    background: transparent !important;
+    color: var(--admin-warning) !important;
+}
+
+.btn-warning.toast-active:hover {
+    background: var(--admin-warning) !important;
+    color: #fff !important;
+}
+
+.btn-warning:active,
+.btn-warning:focus,
+.btn-warning:focus-visible {
+    background: transparent;
+    color: var(--admin-warning);
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-warning:active:hover,
+.btn-warning:focus:hover {
+    background: var(--admin-warning) !important;
+    color: #fff !important;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Table */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-table th {
+    color: var(--admin-text-muted);
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.admin-table td {
+    font-size: 0.9rem;
+}
+
+.admin-table tbody tr:hover {
+    background: rgba(99, 102, 241, 0.05);
+}
+
+/* Badges & Actions */
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid;
+    border-radius: 6px;
+    background: transparent;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--admin-text);
+    pointer-events: none;
+    user-select: none;
+}
+
+.status-badge.active {
+    color: var(--admin-success);
+    border-color: var(--admin-success);
+}
+
+.status-badge.draft {
+    color: var(--admin-warning);
+    border-color: var(--admin-warning);
+}
+
+.status-badge.pending {
+    color: var(--admin-info);
+    border-color: var(--admin-info);
+}
+
+.status-badge.danger {
+    color: var(--admin-danger);
+    border-color: var(--admin-danger);
+}
+
+/* Badge System (New Addition) */
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.badge.bg-success {
+    background-color: var(--admin-success) !important;
+    color: #fff;
+}
+
+.badge.bg-secondary {
+    background-color: var(--admin-secondary) !important;
+    color: #fff;
+}
+
+.badge.bg-danger {
+    background-color: var(--admin-danger) !important;
+    color: #fff;
+}
+
+.badge.bg-warning {
+    background-color: var(--admin-warning) !important;
+    color: #000;
+}
+
+.badge.text-dark {
+    color: #000 !important;
+}
+
+.action-btns {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--admin-border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--admin-card);
+    color: var(--admin-text-muted);
+}
+
+.action-btn:hover {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: var(--admin-primary);
+    color: var(--admin-primary);
+    transform: translateY(-2px);
+}
+
+.action-btn.view:hover {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: var(--admin-info);
+    color: var(--admin-info);
+}
+
+/* Tag Component */
+.tag {
+    background-color: var(--admin-primary);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s ease;
+}
+
+.tag:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Dynamic Confirmation Modal */
+/* Modal Icons */
+.modal-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.modal-icon-restore {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--admin-warning);
+}
+
+.modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    opacity: 1;
+    pointer-events: all;
+    backdrop-filter: blur(2px);
+}
+
+.modal-overlay .modal-content {
+    background: var(--admin-card);
+    border: 1px solid var(--admin-border);
+    border-radius: 12px;
+    padding: 0;
+    /* Header/Body/Footer handles padding */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-overlay .modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--admin-border);
+    display: flex;
+    align-items: center;
+}
+
+.modal-overlay .modal-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-overlay .modal-body {
+    padding: 20px;
+    font-size: 0.95rem;
+    color: var(--admin-text);
+}
+
+.modal-overlay .modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid var(--admin-border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 0 0 12px 12px;
+}
+
+.action-btn.edit:hover {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: var(--admin-success);
+    color: var(--admin-success);
+}
+
+/* Fix Delete Button Appearance (Updated) */
+.action-btn.delete {
+    color: var(--admin-danger);
+    background: rgba(239, 68, 68, 0.05);
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.action-btn.delete:hover {
+    background: var(--admin-danger);
+    color: #fff;
+    border-color: var(--admin-danger);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+/* Order/Sort Buttons */
+.order-btns {
+    display: flex;
+    gap: 5px;
+}
+
+.order-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--admin-border);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--admin-card);
+    color: var(--admin-text-muted);
+    font-size: 0.85rem;
+}
+
+.order-btn:hover {
+    background: rgba(139, 92, 246, 0.15);
+    border-color: var(--admin-secondary);
+    color: var(--admin-secondary);
+    transform: scale(1.1);
+}
+
+.order-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.quick-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: var(--admin-bg);
+    border: 1px solid var(--admin-border);
+    border-radius: 12px;
+    color: var(--admin-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quick-action-btn:hover {
+    border-color: var(--admin-primary);
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.quick-action-btn i {
+    width: 40px;
+    height: 40px;
+    background: rgba(99, 102, 241, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--admin-primary);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--admin-text-muted);
+}
+
+.form-control {
+    width: 100%;
+    padding: 14px 18px;
+    background: var(--admin-input-bg);
+    border: 1px solid var(--admin-border);
+    border-radius: 10px;
+    color: var(--admin-text);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--admin-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Select Dropdown Styling */
+select.form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236366f1' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 12px;
+    padding-right: 35px;
+    /* Reduced from 45px to save space */
+    cursor: pointer;
+    box-sizing: border-box;
+    /* Ensure padding is included in width */
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+select.form-control:hover {
+    border-color: var(--admin-primary);
+}
+
+select.form-control option {
+    background: var(--admin-card);
+    color: var(--admin-text);
+    padding: 10px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-row.full {
+    grid-template-columns: 1fr;
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--admin-border);
+}
+
+@media (max-width: 640px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .form-actions .btn,
+    .form-actions .btn-icon {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .table-responsive {
+        padding: 30px;
+        /* Increased from 20px */
+        margin-bottom: 30px;
+        /* Ensure spacing from footer */
+        overflow: visible;
+        /* Allow dropdowns or shadows to spill out */
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Generic Mobile Card View for Tables */
+    .admin-table thead {
+        display: none;
+    }
+
+    .admin-table,
+    .admin-table tbody,
+    .admin-table tr,
+    .admin-table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        /* Ensure padding doesn't add to width */
+    }
+
+    .admin-table tr {
+        margin-bottom: 20px;
+        background: var(--admin-card);
+        border: 1px solid var(--admin-border);
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+    }
+
+    .admin-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--admin-border-light);
+        word-break: break-word;
+        white-space: normal;
+        flex-wrap: wrap;
+        /* Allow wrapping if content is too wide */
+        gap: 10px;
+        /* Space between label and content when wrapped */
+    }
+
+    /* Ensure content inside td doesn't exceed width */
+    .admin-table td>* {
+        max-width: 100%;
+        /* Allow full width if wrapped */
+    }
+
+    /* Label styling when wrapped */
+    .admin-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--admin-text-muted);
+        text-align: left;
+        margin-right: auto;
+        /* Push label to left */
+        font-size: 0.85rem;
+        flex-shrink: 0;
+        /* Keep label size */
+    }
+
+    /* Ensure content inside td doesn't exceed width */
+    .admin-table td>* {
+        max-width: 60%;
+        /* Limit content width so label stays visible */
+        text-align: right;
+    }
+
+    .admin-table td:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        justify-content: flex-end;
+        /* Actions usually go to end */
+        margin-top: 10px;
+        padding-top: 15px;
+        border-top: 1px solid var(--admin-border);
+    }
+
+    .admin-table td:first-child {
+        padding-top: 0;
+    }
+
+    .admin-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--admin-text-muted);
+        text-align: left;
+        margin-right: 15px;
+        font-size: 0.85rem;
+    }
+
+    /* Project/Blog Image handling in Card View */
+    .admin-table td img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    /* Adjust specific columns if needed */
+    .admin-table td[data-label="Görsel"] {
+        justify-content: center;
+        border-bottom: none;
+        padding-bottom: 5px;
+    }
+
+    .admin-table td[data-label="Görsel"]::before {
+        display: none;
+        /* Hide label for image */
+    }
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.switch {
+    position: relative;
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--admin-bg);
+    border: 1px solid var(--admin-border);
+    border-radius: 26px;
+    transition: 0.3s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background: var(--admin-text-muted);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked+.slider {
+    background: var(--admin-primary);
+    border-color: var(--admin-primary);
+}
+
+input:checked+.slider:before {
+    transform: translateX(22px);
+    background: #fff;
+}
+
+/* Solid Badges (User requested for Messages) */
+.status-badge.solid-danger {
+    background-color: var(--admin-danger);
+    color: #fff;
+    border-color: var(--admin-danger);
+}
+
+.status-badge.solid-warning {
+    background-color: var(--admin-warning);
+    color: #000;
+    border-color: var(--admin-warning);
+}
+
+.status-badge.solid-success {
+    background-color: var(--admin-success);
+    color: #fff;
+    border-color: var(--admin-success);
+}
+
+/* Light Button for Restore (White) */
+.btn-light {
+    background: #fff;
+    color: var(--admin-text);
+    border: 1px solid var(--admin-border);
+}
+
+.btn-light:hover {
+    background: var(--admin-bg);
+    border-color: var(--admin-text-muted);
+}

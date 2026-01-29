@@ -1,0 +1,82 @@
+.login-page .login-box {
+    position: relative;
+}
+
+.login-page .header-actions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.login-page .form-group > div {
+    position: relative;
+}
+
+.login-page .password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--admin-text-muted);
+    cursor: pointer;
+}
+
+.login-page .form-group[style*="display: flex"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-page .form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.login-page .form-group input[type="checkbox"] {
+    accent-color: var(--admin-primary);
+}
+
+.login-page .form-group span {
+    font-size: 0.85rem;
+}
+
+.login-page .form-group a {
+    color: var(--admin-primary);
+    font-size: 0.85rem;
+}
+
+.login-page .signup-section {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.login-page .signup-section p {
+    color: var(--admin-text-muted);
+    font-size: 0.9rem;
+}
+
+.login-page .signup-section a {
+    color: var(--admin-primary);
+    font-weight: 500;
+}
+
+.login-page .security-section {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--admin-border);
+}
+
+.login-page .security-section p {
+    color: var(--admin-text-muted);
+    font-size: 0.85rem;
+}
+
+.login-page .security-section i {
+    margin-right: 5px;
+}

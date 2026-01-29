@@ -1,0 +1,327 @@
+.guestbook-page .status-badge {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+.guestbook-page .badge {
+    cursor: default !important;
+    pointer-events: none !important;
+    user-select: none !important;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Deleted Item Styling Effect */
+.guestbook-page .admin-table tr.deleted-item {
+    opacity: 0.5;
+    background-color: rgba(200, 200, 200, 0.05);
+    filter: grayscale(0.8);
+    pointer-events: auto !important;
+    /* Ensure clicks work */
+}
+
+.guestbook-page .admin-table tr.deleted-item * {
+    pointer-events: auto !important;
+    filter: none !important;
+}
+
+.guestbook-page .admin-table tr .action-btn {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative;
+    z-index: 5;
+}
+
+.guestbook-page .admin-table tr.deleted-item:hover {
+    opacity: 0.8;
+    background-color: rgba(200, 200, 200, 0.1);
+}
+
+/* Modal Custom Styles */
+.guestbook-page .admin-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.guestbook-page .admin-modal-overlay.active {
+    display: flex !important;
+}
+
+.guestbook-page .admin-modal {
+    background: var(--admin-card);
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+/* Restore Modal Specifics */
+body>.admin-modal-overlay {
+    /* Styles for dynamic body-appended modals */
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10005;
+    /* Higher than others */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+body>.admin-modal-overlay.active {
+    opacity: 1;
+}
+
+body>.admin-modal-overlay .admin-modal {
+    background: var(--admin-card);
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#commentModal {
+    z-index: 10000 !important;
+}
+
+.guestbook-page .badge.bg-warning {
+    background-color: #f59e0b !important;
+    color: #1e293b !important;
+}
+
+.guestbook-page .badge.bg-success {
+    background-color: #22c55e !important;
+    color: white !important;
+}
+
+.guestbook-page .badge:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+}
+
+.guestbook-page .card {
+    margin-bottom: 25px;
+}
+
+.guestbook-page .card-header h3 i {
+    color: var(--admin-warning);
+    margin-right: 10px;
+}
+
+.guestbook-page .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.guestbook-page .card-header h3 {
+    margin: 0;
+}
+
+.guestbook-page .search-box {
+    width: 250px;
+    position: relative;
+}
+
+.guestbook-page .search-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--admin-text-muted);
+}
+
+.guestbook-page .search-box input {
+    padding-left: 40px;
+    height: 40px;
+}
+
+.guestbook-page .author-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.guestbook-page .author-avatar {
+    border-radius: 50%;
+}
+
+.guestbook-page .author-meta {
+    font-size: 0.75rem;
+    color: var(--admin-text-muted);
+}
+
+.guestbook-page .comment-text {
+    max-width: 300px;
+}
+
+.guestbook-page .action-btn-approve {
+    color: var(--admin-success);
+}
+
+.guestbook-page .filter-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.guestbook-page .filter-select {
+    width: 150px;
+    padding: 10px;
+}
+
+.guestbook-page .filter-search {
+    width: 200px;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .guestbook-page .filter-controls {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .guestbook-page .search-box,
+    .guestbook-page .filter-select,
+    .guestbook-page .filter-search {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .guestbook-page .card-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .modal-icon-restore {
+        background: rgba(245, 158, 11, 0.1);
+        color: var(--admin-warning);
+    }
+
+    /* Specific overrides for Comment Content in Table Card View */
+    .guestbook-page .comment-text {
+        max-width: none;
+        /* Allow full width in mobile card view */
+        white-space: normal;
+        margin-top: 5px;
+    }
+
+    .guestbook-page .author-wrapper {
+        justify-content: flex-end;
+        /* Align to right in card view rows */
+    }
+}
+
+/* Modal Custom Styles (Replacing Inline) */
+#commentModal .admin-modal {
+    text-align: left;
+    max-width: 500px;
+    padding: 0;
+    /* Let children handle padding or header/footer */
+    overflow: hidden;
+    /* For rounded corners */
+}
+
+#commentModal .modal-header {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+#commentModal .modal-header-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#commentModal .modal-icon-custom {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--admin-info);
+    margin: 0;
+}
+
+#commentModal .modal-title-custom {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+#commentModal .modal-body-custom {
+    text-align: left;
+    margin-bottom: 0;
+    padding: 20px;
+}
+
+#commentModal .modal-meta {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: var(--admin-text-muted);
+}
+
+#commentModal .fa-clock-custom {
+    margin-right: 5px;
+}
+
+#commentModal .modal-message {
+    width: 100%;
+    min-height: 120px;
+    resize: none;
+    background: var(--admin-bg);
+    border: 1px solid var(--admin-border);
+    color: var(--admin-text);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#commentModal .modal-footer-custom {
+    justify-content: flex-end;
+    padding: 20px;
+    border-top: 1px solid var(--admin-border);
+    background: var(--admin-bg-light, rgba(0, 0, 0, 0.02));
+    display: flex;
+    gap: 10px;
+}
+
+#commentModal .btn-approve-custom {
+    margin-right: 10px;
+}
+
+/* Utilities */
+.hidden {
+    display: none !important;
+}
+
+.mr-15 {
+    margin-right: 15px;
+}
+
+.modal-icon-delete {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--admin-danger);
+}

@@ -1,0 +1,221 @@
+/* Dashboard Layout Overrides */
+.dashboard-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* 3 Equal Columns */
+    grid-template-rows: min-content 1fr;
+    /* Row 1: Fits content (tables), Row 2: Fills rest */
+    grid-template-areas:
+        "projects blogs actions"
+        "comments messages actions";
+    gap: 25px;
+}
+
+/* Card Assignment to Grid Areas */
+.card-projects {
+    grid-area: projects;
+}
+
+.card-blogs {
+    grid-area: blogs;
+}
+
+.quick-actions-card {
+    grid-area: actions;
+}
+
+.card-comments {
+    grid-area: comments;
+}
+
+.card-messages {
+    grid-area: messages;
+}
+
+/* Ensure cards stretch to fill their grid cells */
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure inner content of cards expands correctly */
+.card .table-responsive,
+.card .dashboard-list,
+.card .quick-actions {
+    flex-grow: 1;
+    /* Pushes footer/bottom elements down if needed */
+}
+
+/* Responsive: Tablet (2 Columns) */
+@media (max-width: 1200px) {
+    .dashboard-grid-layout {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "projects blogs"
+            "comments messages"
+            "actions actions";
+    }
+}
+
+/* Responsive: Mobile (1 Column) */
+@media (max-width: 768px) {
+    .dashboard-grid-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "projects"
+            "blogs"
+            "comments"
+            "messages"
+            "actions";
+    }
+}
+
+/* Index Page Specifics */
+.index-page .quick-action-btn p {
+    font-size: 0.8rem;
+    color: var(--admin-text-muted);
+    margin-top: 3px;
+}
+
+.index-page .quick-action-btn .status-text {
+    color: var(--admin-success);
+}
+
+/* Dashboard Lists (Comments & Messages) */
+.dashboard-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dashboard-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.dashboard-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0px;
+}
+
+/* Message Item Specifics */
+.dashboard-item.message-item {
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-start;
+}
+
+/* Item Typography */
+.item-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+}
+
+.item-name {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--admin-text);
+}
+
+.item-meta {
+    font-size: 0.7rem;
+    color: var(--admin-text-muted);
+}
+
+.item-text {
+    font-size: 0.8rem;
+    color: var(--admin-text-muted);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.message-item .item-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Action Buttons */
+.item-actions {
+    display: flex;
+    gap: 5px;
+    margin-left: 10px;
+}
+
+.btn-icon-sm {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--admin-border);
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-approve {
+    color: var(--admin-success);
+}
+
+.btn-approve:hover {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: var(--admin-success);
+}
+
+.btn-delete {
+    color: var(--admin-danger);
+}
+
+.btn-delete:hover {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: var(--admin-danger);
+}
+
+/* Message Avatars */
+.message-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.avatar-blue {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--admin-primary);
+}
+
+.avatar-green {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--admin-success);
+}
+
+/* Quick Action Full Height Fix - Internal Distribution */
+.quick-actions-card .quick-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    height: 100%;
+}

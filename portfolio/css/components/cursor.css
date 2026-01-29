@@ -1,0 +1,54 @@
+/* Custom Cursor */
+@media (min-width: 992px) {
+    body {
+        cursor: none;
+    }
+
+    a,
+    button,
+    .btn,
+    input,
+    textarea,
+    select {
+        cursor: none;
+    }
+
+    .cursor-dot,
+    .cursor-outline {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 999999;
+        pointer-events: none;
+    }
+
+    .cursor-dot {
+        width: 8px;
+        height: 8px;
+        background-color: var(--primary-color);
+        transition: width 0.2s, height 0.2s, background-color 0.2s;
+    }
+
+    .cursor-outline {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(99, 102, 241, 0.5);
+        transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+    }
+
+    /* Verify if user is hovering over a clickable element */
+    body.hovering .cursor-dot {
+        width: 12px;
+        height: 12px;
+        background-color: var(--text-primary);
+    }
+
+    body.hovering .cursor-outline {
+        width: 60px;
+        height: 60px;
+        border-color: var(--secondary-color);
+        background-color: rgba(99, 102, 241, 0.1);
+    }
+}

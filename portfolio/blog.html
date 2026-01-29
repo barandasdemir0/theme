@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Baran Dasdemir Blog - Teknoloji, Yazılım ve Tasarım Üzerine Yazılar">
+    <meta name="theme-color" content="#0f0f23">
+    <title>Blog | Baran Dasdemir</title>
+
+    <!-- Theme Script - Load First -->
+    <script src="js/theme.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/components/navbar.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/modal.css">
+    <link rel="stylesheet" href="css/components/language.css">
+    <link rel="stylesheet" href="css/components/search.css">
+    <link rel="stylesheet" href="css/components/chatbot.css">
+    <link rel="stylesheet" href="css/sections/hero.css">
+    <link rel="stylesheet" href="css/sections/sections.css">
+    <link rel="stylesheet" href="css/sections/blog.css"> <!-- New Blog CSS -->
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="loader-container">
+            <div class="loader-logo"><span>B</span>aran<span>.</span></div>
+            <div class="loader"></div>
+            <div class="loader-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="loader-progress"></div>
+            <div class="loader-text">Yükleniyor</div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-xl">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span>B</span>aran<span>.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Hakkımda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resume.html">Özgeçmiş</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Projeler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="guestbook.html">Ziyaretçi Defteri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">İletişim</a>
+                    </li>
+                </ul>
+
+                <!-- Language Dropdown -->
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-toggle" aria-label="Dil Seç">
+                        <span>TR</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-menu">
+                        <button class="lang-option active" data-lang="tr">
+                            <span>🇹🇷</span> Türkçe
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <span>🇬🇧</span> English
+                        </button>
+                    </div>
+                </div>
+
+                <button class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="section" style="padding-top: 150px; padding-bottom: 20px; background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-subtitle">Yazılar & Makaleler</p>
+                <h1 class="section-title">Teknoloji <span class="gradient-text">Blogu</span></h1>
+                <div class="section-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section class="section blog-section" style="padding-top: 40px;">
+        <div class="container">
+            <!-- Search Box -->
+            <div class="search-box" data-aos="fade-up" id="blogSearch">
+                <input type="text" class="search-input" id="searchInput" placeholder="Yazılarda ara...">
+                <button class="search-clear" id="searchClear"><i class="fas fa-times"></i></button>
+                <i class="fas fa-search search-icon"></i>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="portfolio-filters" data-aos="fade-up" style="margin-bottom: 50px;">
+                <button class="filter-btn active" data-filter="*">Tümü</button>
+                <button class="filter-btn" data-filter="yazilim">Yazılım</button>
+                <button class="filter-btn" data-filter="kariyer">Kariyer</button>
+                <button class="filter-btn" data-filter="saas">SaaS</button>
+            </div>
+
+            <div class="blog-grid">
+
+                <!-- Blog Post 1 -->
+                <article class="blog-card" data-aos="fade-up" data-category="yazilim">
+                    <div class="blog-image">
+                        <span class="blog-category">Yazılım</span>
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop"
+                            alt="Kodlama">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 2 Ocak 2024</span>
+                            <span><i class="far fa-user"></i> Baran D.</span>
+                            <span><i class="far fa-clock"></i> 5 dk okuma</span>
+                        </div>
+                        <h3 class="blog-title"><a href="blog-details.html">Modern Web Geliştirmede React vs Vue
+                                Karşılaştırması</a></h3>
+                        <p class="blog-excerpt">Front-end dünyasının iki devi arasındaki farklar, avantajlar ve hangi
+                            projede hangisini seçmeli?</p>
+                        <div class="blog-footer">
+                            <a href="blog-details.html" class="read-more">Devamını Oku <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="100" data-category="kariyer">
+                    <div class="blog-image">
+                        <span class="blog-category">Kariyer</span>
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
+                            alt="Ofis">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 28 Aralık 2023</span>
+                            <span><i class="far fa-user"></i> Baran D.</span>
+                            <span><i class="far fa-clock"></i> 7 dk okuma</span>
+                        </div>
+                        <h3 class="blog-title"><a href="blog-details.html">Junior Developer'dan Senior'a Giden Yol</a>
+                        </h3>
+                        <p class="blog-excerpt">Yazılım kariyerinde basamakları tırmanırken dikkat edilmesi gerekenler
+                            &nbsp;ve soft skill'lerin önemi.</p>
+                        <div class="blog-footer">
+                            <a href="blog-details.html" class="read-more">Devamını Oku <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="200" data-category="saas">
+                    <div class="blog-image">
+                        <span class="blog-category">SaaS</span>
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
+                            alt="SaaS">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 15 Aralık 2023</span>
+                            <span><i class="far fa-user"></i> Baran D.</span>
+                            <span><i class="far fa-clock"></i> 6 dk okuma</span>
+                        </div>
+                        <h3 class="blog-title"><a href="#">Micro SaaS Fikri Nasıl Bulunur ve Doğrulanır?</a></h3>
+                        <p class="blog-excerpt">Kârlı bir Micro SaaS projesi geliştirmek için izlenmesi gereken adımlar
+                            ve pazar araştırması teknikleri.</p>
+                        <div class="blog-footer">
+                            <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-wrapper">
+                <button class="pagination-btn" id="prevPage">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn" id="nextPage">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><span>B</span>aran<span>.</span></h3>
+                    <p>Modern teknolojilerle web, mobil ve SaaS çözümleri.</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="about.html">Hakkımda</a></li>
+                        <li><a href="portfolio.html">Projeler</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>İletişim</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope me-2"></i>hello@barandasdemir.com</li>
+                        <li><i class="fas fa-phone me-2"></i>+90 555 123 4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 Baran Dasdemir. Made with <span>❤️</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <button class="chatbot-toggle" aria-label="Sohbet Aç">
+        <i class="fas fa-comment-dots"></i>
+        <span class="badge">1</span>
+    </button>
+
+    <div class="chatbot-window">
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">🤖</div>
+            <div class="chatbot-info">
+                <h4>Baran Asistan</h4>
+                <span>Genellikle hemen yanıt verir</span>
+            </div>
+            <button class="chatbot-close" aria-label="Kapat">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages">
+            <div class="chat-message bot">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    Merhaba! 👋 Blog yazıları hakkında soru sormak ister misiniz?
+                </div>
+            </div>
+        </div>
+        <div class="quick-replies">
+            <button class="quick-reply-btn">Baran kimdir?</button>
+            <button class="quick-reply-btn">Projeler</button>
+            <button class="quick-reply-btn">İletişim</button>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" name="chatbotMessage" placeholder="Mesajınızı yazın..." />
+            <button class="chatbot-send" aria-label="Gönder">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+
+</html>

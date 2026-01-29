@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Baran Dasdemir Ziyaretçi Defteri - Görüşlerinizi ve notlarınızı bırakın.">
+    <meta name="theme-color" content="#0f0f23">
+    <title>Ziyaretçi Defteri | Baran Dasdemir</title>
+
+    <!-- Theme Script - Load First -->
+    <script src="js/theme.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/components/navbar.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/forms.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/modal.css">
+    <link rel="stylesheet" href="css/components/language.css">
+    <link rel="stylesheet" href="css/components/chatbot.css">
+    <link rel="stylesheet" href="css/sections/hero.css">
+    <link rel="stylesheet" href="css/sections/sections.css">
+    <link rel="stylesheet" href="css/sections/guestbook.css"> <!-- Guestbook CSS -->
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="loader-container">
+            <div class="loader-logo"><span>B</span>aran<span>.</span></div>
+            <div class="loader"></div>
+            <div class="loader-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="loader-progress"></div>
+            <div class="loader-text">Yükleniyor</div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-xl">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span>B</span>aran<span>.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Hakkımda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Özgeçmiş</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Projeler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="guestbook.html">Ziyaretçi Defteri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">İletişim</a></li>
+                </ul>
+
+                <!-- Language Dropdown -->
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-toggle" aria-label="Dil Seç">
+                        <span>TR</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-menu">
+                        <button class="lang-option active" data-lang="tr">
+                            <span>🇹🇷</span> Türkçe
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <span>🇬🇧</span> English
+                        </button>
+                    </div>
+                </div>
+
+                <button class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="section guestbook-header-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-subtitle">Topluluk</p>
+                <h1 class="section-title">Ziyaretçi <span class="gradient-text">Defteri</span></h1>
+                <div class="section-line"></div>
+                <p class="text-center mt-3 section-header-subtitle">
+                    Ziyaretçiler için bir hatıra duvarı. Düşüncelerinizi paylaşmak için GitHub ile giriş yapın veya bir
+                    not bırakın.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUESTBOOK SECTION -->
+    <section class="section guestbook-section">
+        <div class="container guestbook-container">
+
+            <!-- Auth / Sign In Call to Action -->
+            <div class="guestbook-auth" data-aos="fade-up">
+                <p class="auth-text">Yorum bırakmak için sosyal medya hesaplarınızla giriş yapmanız gerekmektedir.</p>
+                <div class="auth-buttons">
+                    <a href="#" class="btn-github">
+                        <i class="fab fa-github"></i> GitHub ile Giriş
+                    </a>
+                    <a href="#" class="btn-linkedin">
+                        <i class="fab fa-linkedin"></i> LinkedIn ile Giriş
+                    </a>
+                </div>
+            </div>
+
+            <!-- Comment Form (Simulated) -->
+            <div class="guestbook-form" data-aos="fade-up" data-aos-delay="100">
+                <div class="form-header">
+                    <h3>Bir Not Bırakın</h3>
+                    <p>Mesajlarınız moderasyon sonrası yayınlanacaktır.</p>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <textarea class="form-control" id="guestbookMessage" name="message" rows="4"
+                            placeholder="Mesajınız..."></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn-primary-custom form-submit-btn" disabled
+                            title="Giriş yapmalısınız">
+                            <i class="fas fa-paper-plane me-2"></i>Gönder
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Comments List -->
+            <div class="comments-list">
+                <h3 class="mb-4">Son Mesajlar (3)</h3>
+
+                <!-- Comment 1 -->
+                <div class="comment-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="comment-avatar">
+                        <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="GitHub User">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <div class="comment-author">
+                                Linus Torvalds
+                                <span>Contributor</span>
+                            </div>
+                            <div class="comment-date">2 saat önce</div>
+                        </div>
+                        <p class="comment-text">
+                            Harika bir portföy çalışması olmuş! Özellikle temiz kod yapısını ve modern tasarımı çok
+                            beğendim. Başarılar dilerim.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Comment 2 -->
+                <div class="comment-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="comment-avatar">
+                        <img src="https://avatars.githubusercontent.com/u/1024025?v=4" alt="GitHub User">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <div class="comment-author">
+                                Dan Abramov
+                                <span>Guest</span>
+                            </div>
+                            <div class="comment-date">Dün</div>
+                        </div>
+                        <p class="comment-text">
+                            React kullanmasan bile Vanilla JS ile bu kadar interaktif bir yapı kurman takdire şayan.
+                            Glassmorphism efektleri çok yerinde kullanılmış. ✨
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Comment 3 -->
+                <div class="comment-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="comment-avatar">
+                        <img src="https://avatars.githubusercontent.com/u/1500684?v=4" alt="GitHub User">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <div class="comment-author">
+                                Kent C. Dodds
+                                <span>Guest</span>
+                            </div>
+                            <div class="comment-date">2 gün önce</div>
+                        </div>
+                        <p class="comment-text">
+                            Tasarım harika, UX akışı çok yumuşak. Mobil uyumluluk da gayet başarılı görünüyor. Eline
+                            sağlık! 🚀
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-wrapper">
+                <button class="pagination-btn" id="prevPage">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn" id="nextPage">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><span>B</span>aran<span>.</span></h3>
+                    <p>Modern teknolojilerle web, mobil ve SaaS çözümleri geliştiren tutkulu bir developer.</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="about.html">Hakkımda</a></li>
+                        <li><a href="resume.html">Özgeçmiş</a></li>
+                        <li><a href="portfolio.html">Projeler</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="guestbook.html">Ziyaretçi Defteri</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>İletişim</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope me-2"></i>hello@barandasdemir.com</li>
+                        <li><i class="fas fa-phone me-2"></i>+90 555 123 4567</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i>İstanbul, Türkiye</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 Baran Dasdemir. Made with <span>❤️</span> in Istanbul</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <button class="chatbot-toggle" aria-label="Sohbet Aç">
+        <i class="fas fa-comment-dots"></i>
+        <span class="badge">1</span>
+    </button>
+
+    <div class="chatbot-window">
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">🤖</div>
+            <div class="chatbot-info">
+                <h4>Baran Asistan</h4>
+                <span>Genellikle hemen yanıt verir</span>
+            </div>
+            <button class="chatbot-close" aria-label="Kapat">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages">
+            <div class="chat-message bot">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    Merhaba! 👋 Ziyaretçi defterine hoş geldiniz!
+                </div>
+            </div>
+        </div>
+        <div class="quick-replies">
+            <button class="quick-reply-btn">Baran kimdir?</button>
+            <button class="quick-reply-btn">Projeler</button>
+            <button class="quick-reply-btn">İletişim</button>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" name="chatbotMessage" placeholder="Mesajınızı yazın..." />
+            <button class="chatbot-send" aria-label="Gönder">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Guestbook Success Modal -->
+    <div class="success-modal" id="guestbookSuccessModal">
+        <div class="modal-content success-modal-content">
+            <div class="modal-header success-modal-header">
+                <div class="success-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            <div class="modal-body success-modal-body">
+                <h2>Mesajınız Gönderildi! 🎉</h2>
+                <p>Yorumunuz başarıyla kaydedilmiştir. Moderasyon sonrası yayınlanacaktır.</p>
+            </div>
+            <div class="modal-footer success-modal-footer">
+                <button class="btn-primary-custom close-modal">
+                    <i class="fas fa-check me-2"></i>Tamam
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/guestbook.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+
+</html>

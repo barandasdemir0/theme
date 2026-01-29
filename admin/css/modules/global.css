@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hide all scrollbars */
+html,
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+    width: 100%;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Base Utilities */
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+.flex-visible {
+    display: flex !important;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--admin-bg);
+    color: var(--admin-text);
+    min-height: 100vh;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Utility Classes */
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+@media (min-width: 769px) {
+    .d-md-none {
+        display: none !important;
+    }
+
+    .d-md-block {
+        display: block !important;
+    }
+
+    .d-md-flex {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .d-sm-none {
+        display: none !important;
+    }
+
+    .d-sm-block {
+        display: block !important;
+    }
+
+    .d-sm-flex {
+        display: flex !important;
+    }
+
+    .d-sm-flex {
+        display: flex !important;
+    }
+}
+
+/* Global Text Colors */
+.text-success {
+    color: var(--admin-success) !important;
+}
+
+.text-danger {
+    color: var(--admin-danger) !important;
+}
+
+/* JS Helper Classes */
+.overflow-hidden {
+    overflow: hidden !important;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.badge-danger-custom {
+    background-color: #ef4444 !important;
+    color: white !important;
+}
+
+.btn-saved-state {
+    background: var(--admin-success) !important;
+    color: white !important;
+}
+
+/* Spacing Utilities */
+.mr-5 {
+    margin-right: 5px !important;
+}
+
+.mr-10 {
+    margin-right: 10px !important;
+}
+
+.mr-15 {
+    margin-right: 15px !important;
+}
+
+.mr-auto {
+    margin-right: auto !important;
+}
+
+.me-2 {
+    margin-right: 8px !important;
+}
+
+.mb-25 {
+    margin-bottom: 25px !important;
+}
+
+.mt-15 {
+    margin-top: 15px !important;
+}
+
+.mt-25 {
+    margin-top: 25px !important;
+}
+
+.p-20 {
+    padding: 20px !important;
+}
+
+/* Width Utilities */
+.w-60 {
+    width: 60px !important;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+/* Text Utilities */
+.text-muted {
+    color: var(--admin-text-muted) !important;
+}
+
+.text-dark {
+    color: #000 !important;
+}
+
+/* Textarea Height Utilities */
+.textarea-sm {
+    min-height: 80px !important;
+}
+
+.textarea-md {
+    min-height: 100px !important;
+}
+
+.textarea-lg {
+    min-height: 300px !important;
+}
+
+/* Flex Utilities */
+.flex-1 {
+    flex: 1 !important;
+}
+
+.flex-2 {
+    flex: 2 !important;
+}
+
+/* Height Utilities */
+.min-h-150 {
+    min-height: 150px !important;
+}

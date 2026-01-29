@@ -1,0 +1,219 @@
+.projects-page .card-header>div {
+    display: flex;
+    gap: 10px;
+}
+
+.projects-page .card-header select {
+    min-width: 180px;
+    padding: 10px;
+}
+
+.projects-page .card-header input {
+    width: 200px;
+    padding: 10px;
+}
+
+.projects-page .admin-table img {
+    border-radius: 6px;
+}
+
+.projects-page .action-btn.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Deleted Item Styling Effect */
+.projects-page .admin-table tr.deleted-item {
+    opacity: 0.5;
+    background-color: rgba(200, 200, 200, 0.05);
+    filter: grayscale(0.8);
+}
+
+.projects-page .admin-table tr.deleted-item:hover {
+    opacity: 0.8;
+    background-color: rgba(200, 200, 200, 0.1);
+}
+
+.projects-page #projectForm {
+    margin-top: 25px;
+    display: none;
+}
+
+.projects-page #projectForm.visible {
+    display: block;
+}
+
+.projects-page .form-row.full {
+    margin-top: 15px;
+}
+
+.projects-page .form-row.full:nth-of-type(2) {
+    margin-top: 20px;
+}
+
+.projects-page .form-group label i {
+    margin-right: 8px;
+    color: var(--admin-primary);
+}
+
+.projects-page .form-group .upload-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.projects-page .form-group .upload-wrapper input {
+    flex: 1;
+}
+
+
+
+.projects-page .tags-input-container {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    padding: 6px 10px;
+}
+
+.projects-page .tags-input-container input[type="text"] {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--admin-text);
+    flex: 1;
+    min-width: 120px;
+    padding: 4px 0;
+}
+
+.projects-page .project-links-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(16, 185, 129, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.projects-page .project-links-section h4 {
+    margin-bottom: 15px;
+    color: var(--admin-text);
+}
+
+.projects-page .project-links-section h4 i {
+    margin-right: 8px;
+}
+
+.projects-page .form-row label i {
+    margin-right: 5px;
+}
+
+.projects-page .form-actions {
+    margin-top: 25px;
+}
+
+.projects-page .form-actions .btn:nth-child(2) {
+    margin-left: 10px;
+}
+
+.projects-page .toggle-switch {
+    margin-top: 10px;
+}
+
+.projects-page .form-row.status-row {
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .projects-page .card-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .projects-page .card-header>div {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .projects-page .card-header select,
+    .projects-page .card-header input {
+        width: 100%;
+        min-width: 0 !important;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .projects-page .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .projects-page .form-actions {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .projects-page .form-actions .btn {
+        width: 100%;
+        margin: 0 !important;
+    }
+}
+
+/* Editor Specific Refined Styles */
+.projects-page .admin-main.editor-page {
+    padding-top: 32px;
+}
+
+.projects-page .editor-header-back {
+    margin-right: 15px;
+}
+
+.projects-page #projectForm.editor-card {
+    display: block !important;
+    padding-top: 72px;
+}
+
+.projects-page .tags-input-container.editor-tags {
+    max-width: 400px;
+}
+
+.projects-page .tags-input-container.editor-tags input {
+    width: 100%;
+    max-width: 350px;
+}
+
+.projects-page .editor-form-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--admin-border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .projects-page .editor-form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .projects-page .editor-form-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .projects-page .form-group .upload-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .projects-page .tags-input-container {
+        padding: 8px;
+    }
+}

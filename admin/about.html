@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <script src="js/theme-init.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımda | Portfolio Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/modules/variables.css">
+    <link rel="stylesheet" href="css/modules/global.css">
+    <link rel="stylesheet" href="css/modules/layout.css">
+    <link rel="stylesheet" href="css/modules/components.css">
+    <link rel="stylesheet" href="css/modules/notifications.css">
+    <link rel="stylesheet" href="css/modules/login.css">
+    <link rel="stylesheet" href="css/modules/modal.css">
+    <link rel="stylesheet" href="css/modules/about.css">
+</head>
+
+<body class="about-page">
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2><span>Admin</span> Panel</h2>
+                <p>Portfolio Yönetimi</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">
+                    <p class="menu-section-title">Sayfa Yönetimi</p>
+                    <a href="profile.html" class="menu-item">
+                        <i class="fas fa-home"></i>
+                        <span>Hero & Profil</span>
+                    </a>
+                    <a href="about.html" class="menu-item active">
+                        <i class="fas fa-user"></i>
+                        <span>Hakkımda</span>
+                    </a>
+                    <a href="resume.html" class="menu-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Özgeçmiş</span>
+                    </a>
+                    <a href="contact.html" class="menu-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>İletişim</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">İçerik Yönetimi</p>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="messages.html" class="menu-item">
+                        <i class="fas fa-inbox"></i>
+                        <span>Mesajlar</span>
+                    </a>
+                    <a href="projects.html" class="menu-item">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Projeler</span>
+                    </a>
+                    <a href="blog.html" class="menu-item">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog Yazıları</span>
+                    </a>
+                    <a href="guestbook.html" class="menu-item">
+                        <i class="fas fa-comments"></i>
+                        <span>Ziyaretçi Defteri</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">Ayarlar</p>
+                    <a href="categories.html" class="menu-item">
+                        <i class="fas fa-tags"></i>
+                        <span>Kategoriler</span>
+                    </a>
+                    <a href="skills.html" class="menu-item">
+                        <i class="fas fa-code"></i>
+                        <span>Yetenekler</span>
+                    </a>
+                    <a href="github.html" class="menu-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Repoları</span>
+                    </a>
+                    <a href="settings.html" class="menu-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Site Ayarları</span>
+                    </a>
+                    <a href="security.html" class="menu-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Güvenlik</span>
+                    </a>
+                    <a href="chatbot.html" class="menu-item">
+                        <i class="fas fa-robot"></i>
+                        <span>Chatbot</span>
+                    </a>
+                    <a href="notifications.html" class="menu-item">
+                        <i class="fas fa-bell"></i>
+                        <span>Bildirimler</span>
+                    </a>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Çıkış Yap</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <header class="admin-header">
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                <div class="page-title">
+                    <h1>Hakkımda Sayfası</h1>
+                    <p>Portfolio "Hakkımda" (about.html) sayfası içeriğini yönetin</p>
+                </div>
+
+                <!-- Localization Config -->
+                <div id="aboutConfig" class="hidden"
+                    data-msg-select-image="Lütfen bir resim dosyası seçin (PNG, JPG, vb.)"
+                    data-msg-enter-url="Lütfen geçerli bir URL girin."
+                    data-msg-photo-updated="Profil fotoğrafı güncellendi."
+                    data-msg-photo-removed="Profil fotoğrafı kaldırıldı."></div>
+
+                <div class="header-actions">
+
+                    <a href="../index.html" target="_blank" class="btn-icon" title="Siteye Git">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <button class="btn-icon notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+
+                    <div class="user-profile" data-action="navigateTo" data-href="profile.html">
+                        <img src="https://ui-avatars.com/api/?name=Baran+D&background=6366f1&color=fff" alt="Admin">
+                        <div class="user-info">
+                            <h4>Baran Dasdemir</h4>
+                            <span>Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Profile Photo Card -->
+            <div class="card">
+                <div class="card-header">
+                    <h3><i class="fas fa-image"></i>Profil Fotoğrafı</h3>
+                </div>
+
+                <div class="profile-photo-section">
+                    <div class="profile-photo-preview-wrapper">
+                        <div class="profile-photo-preview" id="profilePhotoPreview">
+                            <img id="profileImage"
+                                src="https://ui-avatars.com/api/?name=Baran+D&background=6366f1&color=fff&size=140">
+                        </div>
+                    </div>
+                    <div class="profile-photo-content">
+                        <p class="profile-photo-helper">
+                            Hakkımda sayfasında görünecek profil fotoğrafınız. PNG veya JPG formatında, en az 200x200
+                            piksel önerilir.
+                        </p>
+                        <div class="profile-photo-actions">
+                            <button type="button" class="btn btn-outline btn-sm" data-action="showPhotoUrlModal">
+                                <i class="fas fa-link"></i> URL ile Ekle
+                            </button>
+                            <button type="button" class="btn btn-sm btn-danger-ghost" data-action="removeProfilePhoto">
+                                <i class="fas fa-trash"></i> Kaldır
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Content -->
+            <div class="card">
+                <div class="card-header">
+                    <h3><i class="fas fa-user-circle"></i>Hakkımda Metni</h3>
+                </div>
+
+                <form>
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label>Sayfa Başlığı</label>
+                            <input type="text" class="form-control" value="Merhaba, Ben Baran Dasdemir">
+                        </div>
+                    </div>
+
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label>Detaylı Hakkımda Metni (Paragraf 1)</label>
+                            <textarea
+                                class="form-control about-textarea">5+ yıllık deneyimimle web ve mobil uygulama geliştirme alanında uzmanlaştım. Modern teknolojileri kullanarak kullanıcı odaklı, performanslı ve ölçeklenebilir çözümler üretmek benim en büyük tutkum.</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label>Detaylı Hakkımda Metni (Paragraf 2)</label>
+                            <textarea
+                                class="form-control about-textarea">Full-stack geliştirme, mobil uygulama geliştirme ve Micro SaaS projeleri konularında geniş bir deneyime sahibim. Her projede en iyi pratikleri uygulayarak kaliteli ve sürdürülebilir kod yazmayı hedefliyorum.</textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Personal Info Card -->
+            <div class="card">
+                <div class="card-header">
+                    <h3><i class="fas fa-id-card"></i>Kişisel Bilgiler</h3>
+                </div>
+
+                <form>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>İsim Soyisim</label>
+                            <input type="text" class="form-control" value="Baran Dasdemir">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Adresi</label>
+                            <input type="email" class="form-control" value="hello@barandasdemir.com">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Konum</label>
+                            <input type="text" class="form-control" value="İstanbul, Türkiye">
+                        </div>
+                        <div class="form-group">
+                            <label>Çalışma Durumu</label>
+                            <input type="text" class="form-control" value="Açık İşlere Açık"
+                                placeholder="Örn: Freelance Projelere Açık">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="card">
+                <div class="card-header">
+                    <h3><i class="fas fa-chart-bar"></i>İstatistikler</h3>
+                </div>
+
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-code"></i>Proje Sayısı</label>
+                            <input type="number" class="form-control" value="50">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar-alt"></i>Yıl Deneyim</label>
+                            <input type="number" class="form-control" value="5">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-mug-hot"></i>İçilen Çay</label>
+                            <input type="number" class="form-control" value="1000">
+                        </div>
+                        <div class="form-group">
+                            <!-- Empty for layout balance -->
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-save"></i>
+                            Değişiklikleri Kaydet
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <footer class="admin-footer">
+                <div>&copy; 2024 Baran Dasdemir. Tüm hakları saklıdır.</div>
+                <div>v1.0.0</div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Photo URL Modal -->
+    <div class="admin-modal-overlay" id="photoUrlModal">
+        <div class="admin-modal">
+            <div class="modal-header">
+                <h3>Fotoğraf URL'si Ekle</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Fotoğraf URL'si</label>
+                    <input type="url" id="photoUrlInput" class="form-control"
+                        placeholder="https://example.com/photo.jpg">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-action="closePhotoUrlModal">İptal</button>
+                <button class="btn btn-primary" data-action="confirmPhotoUrl">Ekle</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Remove Photo Confirmation Modal -->
+    <div class="admin-modal-overlay" id="removePhotoModal">
+        <div class="admin-modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> Fotoğrafı Kaldır</h3>
+            </div>
+            <div class="modal-body">
+                <p>Profil fotoğrafını kaldırmak istediğinize emin misiniz?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-action="closeRemovePhotoModal">İptal</button>
+                <button class="btn btn-danger" data-action="confirmRemovePhoto">Evet, Kaldır</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/modules/pages.js"></script>
+    <script src="js/modules/notifications.js"></script>
+    <script src="js/modules/auth.js"></script>
+    <script src="js/modules/ui.js"></script>
+    <script src="js/modules/about.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

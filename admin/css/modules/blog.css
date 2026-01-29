@@ -1,0 +1,57 @@
+/* Blog Page Styles */
+
+/* Filter Container */
+.filter-container {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-select {
+    min-width: 160px;
+    padding: 10px;
+}
+
+.filter-search {
+    width: 200px;
+    padding: 10px;
+}
+
+/* Deleted Item Styling Effect */
+.blog-page .admin-table tr.deleted-item {
+    opacity: 0.5;
+    background-color: rgba(200, 200, 200, 0.05);
+    filter: grayscale(0.8);
+}
+
+.blog-page .admin-table tr.deleted-item:hover {
+    opacity: 0.8;
+    background-color: rgba(200, 200, 200, 0.1);
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .filter-select,
+    .filter-search {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+/* Textarea Height Utilities */
+.textarea-sm {
+    min-height: 80px !important;
+}
+
+.textarea-lg {
+    min-height: 300px !important;
+}

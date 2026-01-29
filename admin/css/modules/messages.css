@@ -1,0 +1,944 @@
+.messages-page .email-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+    min-height: 500px;
+    flex: 1;
+}
+
+.messages-page .email-sidebar {
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.messages-page .email-sidebar .btn-primary {
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.messages-page .email-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    color: var(--admin-text);
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+}
+
+.messages-page .email-nav-item.active {
+    background: var(--admin-bg);
+}
+
+.messages-page .email-nav-item:hover {
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.messages-page .email-nav-item i {
+    width: 20px;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.messages-page .email-nav-item .badge {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    min-width: 20px;
+}
+
+.messages-page .email-nav-item span:first-of-type {
+    flex: 1;
+}
+
+/* Sidebar Nav Badges */
+.messages-page .nav-badge {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    min-width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    color: white;
+    font-weight: 600;
+}
+
+.messages-page .nav-badge.danger {
+    background-color: #ef4444;
+}
+
+.messages-page .nav-badge.warning {
+    background-color: #f59e0b;
+}
+
+.messages-page .nav-badge.success {
+    background-color: #22c55e;
+}
+
+.messages-page .nav-badge.primary {
+    background-color: #6366f1;
+}
+
+.messages-page .nav-badge.muted {
+    background-color: #64748b;
+}
+
+.messages-page .nav-badge.dark {
+    background-color: #6b7280;
+}
+
+.messages-page .nav-badge.draft {
+    background-color: #3b82f6;
+}
+
+.messages-page .nav-badge.trash {
+    background-color: #991b1b;
+}
+
+/* Table Status Badges */
+.messages-page .status-badge.danger {
+    background-color: transparent;
+    border: 1px solid #ef4444;
+    color: #ef4444;
+}
+
+.messages-page .status-badge.warning {
+    background-color: transparent;
+    border: 1px solid #f59e0b;
+    color: #f59e0b;
+}
+
+.messages-page .status-badge.primary {
+    background-color: transparent;
+    border: 1px solid #6366f1;
+    color: #6366f1;
+}
+
+.messages-page .status-badge.draft {
+    background-color: transparent;
+    border: 1px solid #3b82f6;
+    color: #3b82f6;
+}
+
+.messages-page .status-badge.trash {
+    background-color: transparent;
+    border: 1px solid #991b1b;
+    color: #991b1b;
+}
+
+.messages-page .email-list {
+    height: 100%;
+    overflow-y: auto;
+    padding: 0;
+}
+
+/* Ensure scrollable lists have bottom padding so last items are not hidden behind footer */
+.messages-page .email-list {
+    padding-bottom: 40px;
+}
+
+.messages-page .email-toolbar {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--admin-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.messages-page .admin-footer {
+    margin-top: 48px;
+}
+
+.messages-page .email-toolbar h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--admin-text);
+}
+
+.messages-page .template-quick-bar {
+    padding: 10px;
+    background: var(--admin-card);
+    border-top: 1px solid var(--admin-border);
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.messages-page .template-quick-btn {
+    font-size: 0.8rem;
+}
+
+.messages-page .template-quick-btn-end {
+    margin-left: auto;
+}
+
+.messages-page .search-box {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+}
+
+.messages-page .search-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--admin-text-muted);
+    pointer-events: none;
+}
+
+.messages-page .search-box input {
+    padding-left: 40px;
+    height: 40px;
+    width: 100%;
+    border: 1px solid var(--admin-border);
+    border-radius: 10px;
+    background: var(--admin-bg);
+    color: var(--admin-text);
+}
+
+.messages-page .unread-row {
+    background: rgba(var(--admin-primary-rgb), 0.05);
+    font-weight: 600;
+}
+
+
+
+/* Modal Styling */
+.messages-page .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.messages-page .modal-overlay.visible {
+    display: flex !important;
+}
+
+.messages-page #composeModal .admin-modal {
+    background: var(--admin-card);
+    border-radius: 16px;
+    max-width: 1000px;
+    width: 95%;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.messages-page #messageModal .admin-modal {
+    background: var(--admin-card);
+    border-radius: 16px;
+    max-width: 700px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: auto;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.messages-page .modal-header {
+    padding: 25px 35px;
+    border-bottom: 1px solid var(--admin-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.messages-page .modal-header h3 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.messages-page .modal-body {
+    padding: 35px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.messages-page .form-group {
+    margin-bottom: 25px;
+}
+
+.messages-page .form-group>label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--admin-text-muted);
+    font-size: 0.9rem;
+}
+
+.messages-page .form-group input {
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: var(--admin-input-bg, rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--admin-border);
+    color: var(--admin-text);
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.messages-page .form-group input:focus {
+    border-color: var(--admin-primary);
+    background: var(--admin-card);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    outline: none;
+}
+
+.messages-page .form-group input[type="text"]:last-of-type {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.messages-page .blog-editor {
+    border: 1px solid var(--admin-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 300px;
+}
+
+.messages-page .editor-toolbar {
+    border-bottom: 1px solid var(--admin-border);
+    background: var(--admin-bg-light, rgba(255, 255, 255, 0.02));
+    padding: 12px 15px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.messages-page #composeFontSizeSelect {
+    width: 70px;
+    padding: 6px 8px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    border: 1px solid var(--admin-border);
+    background: var(--admin-card);
+    color: var(--admin-text);
+}
+
+.messages-page .toolbar-group {
+    position: relative;
+    display: flex;
+    gap: 2px;
+    padding-right: 8px;
+    margin-right: 8px;
+    border-right: 1px solid var(--admin-border);
+}
+
+.messages-page .toolbar-group:last-child {
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.messages-page .toolbar-group input[type="color"] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.messages-page .toolbar-btn {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: var(--admin-text-muted);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.messages-page .toolbar-btn:hover {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--admin-primary);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+.messages-page .toolbar-btn span {
+    position: absolute;
+    bottom: 3px;
+    left: 6px;
+    right: 6px;
+    height: 3px;
+    background: #ef4444;
+    border-radius: 2px;
+}
+
+.messages-page .editor-content {
+    flex: 1;
+    min-height: 200px;
+    padding: 25px;
+    outline: none;
+    background: var(--admin-card);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--admin-text);
+    overflow-y: auto;
+}
+
+.messages-page .modal-footer {
+    padding: 25px 35px;
+    border-top: 1px solid var(--admin-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--admin-bg-light, rgba(255, 255, 255, 0.02));
+}
+
+.messages-page [data-action="closeComposeModal"] {
+    color: var(--admin-text-muted);
+    border-color: var(--admin-border);
+    background: transparent;
+}
+
+.messages-page [data-action="closeComposeModal"]:hover {
+    color: var(--admin-text);
+    border-color: var(--admin-text);
+}
+
+.messages-page .modal-footer>div {
+    display: flex;
+    gap: 15px;
+}
+
+/* Message Modal Specific */
+#messageModal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+#messageModal .modal-header button {
+    background: transparent;
+    border: none;
+    color: var(--admin-text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#messageModal .modal-body {
+    padding: 25px;
+}
+
+#messageModal .modal-body>div:first-child {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#messageModal .modal-body>div>div {
+    display: flex;
+    gap: 10px;
+}
+
+#messageModal .modal-body span:first-child {
+    color: var(--admin-text-muted);
+    min-width: 80px;
+}
+
+#messageModal .modal-body span i {
+    margin-right: 8px;
+}
+
+#messageModal .modal-body>div:last-of-type {
+    background: var(--admin-bg);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--admin-border);
+}
+
+#messageModal .modal-body label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--admin-text-muted);
+    font-size: 0.85rem;
+}
+
+#messageModal .modal-body p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+#messageModal .modal-footer {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    padding: 20px 25px;
+    border-top: 1px solid var(--admin-border);
+}
+
+/* Pagination Styles */
+.pagination-wrapper {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--admin-border);
+}
+
+.pagination {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.pagination-btn {
+    min-width: 40px;
+    height: 40px;
+    border: 1px solid var(--admin-border);
+    background: var(--admin-card-bg);
+    color: var(--admin-text);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination-btn:hover:not(:disabled):not(.active) {
+    background: var(--admin-primary);
+    color: white;
+    border-color: var(--admin-primary);
+}
+
+.pagination-btn.active {
+    background: var(--admin-primary);
+    color: white;
+    border-color: var(--admin-primary);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1024px) {
+    .messages-page .email-layout {
+        grid-template-columns: 200px 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .messages-page .email-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .messages-page .email-sidebar {
+        display: none;
+    }
+
+    .messages-page .email-list {
+        border-left: none;
+    }
+
+    .messages-page .email-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .messages-page .toolbar-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .messages-page .search-box {
+        width: 100%;
+    }
+
+    .messages-page .pagination-wrapper {
+        padding: 15px;
+    }
+
+    .messages-page .pagination {
+        gap: 3px;
+    }
+
+    .messages-page .pagination-btn {
+        min-width: 35px;
+        height: 35px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .messages-page .email-item {
+        padding: 12px;
+    }
+
+    .messages-page .email-sender {
+        font-size: 0.9rem;
+    }
+
+    .messages-page .email-subject {
+        font-size: 0.85rem;
+    }
+
+    .messages-page .email-preview {
+        font-size: 0.8rem;
+    }
+
+    .messages-page .email-time {
+        font-size: 0.75rem;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN (ADDED)
+   ============================================ */
+@media (max-width: 1024px) {
+    .messages-page .email-layout {
+        grid-template-columns: 200px 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .messages-page .email-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .messages-page .email-sidebar {
+        display: none;
+        /* Hide sidebar list on mobile */
+    }
+
+    .messages-page .email-list {
+        border-left: none;
+        padding-bottom: 60px;
+    }
+
+    .messages-page .email-toolbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .messages-page .email-toolbar h3 {
+        flex: 1;
+        font-size: 1.1rem;
+    }
+
+    .messages-page .search-box {
+        width: 100%;
+        order: 3;
+        margin-top: 5px;
+    }
+
+    .messages-page .pagination-wrapper {
+        padding: 15px;
+    }
+
+    /* Modal Mobile Fixes */
+    .messages-page #composeModal .admin-modal {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .messages-page .modal-header {
+        padding: 15px 20px;
+    }
+
+    .messages-page .modal-body {
+        padding: 15px;
+    }
+
+    .messages-page .editor-toolbar {
+        padding: 5px;
+        gap: 5px;
+    }
+
+    .toolbar-group {
+        padding-right: 5px;
+        margin-right: 5px;
+    }
+
+    .messages-page .template-quick-bar {
+        padding: 10px;
+        gap: 5px;
+        justify-content: center;
+    }
+
+    .messages-page .template-quick-btn {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+        flex: 1 1 auto;
+        /* Allow buttons to grow/shrink */
+        text-align: center;
+        white-space: nowrap;
+        /* Prevent text wrapping inside button if possible, or allow multiline if needed */
+    }
+
+    .messages-page .modal-footer {
+        padding: 15px;
+        flex-direction: column-reverse;
+        /* Stack buttons vertically */
+        gap: 10px;
+    }
+
+    .messages-page .modal-footer>div {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .messages-page .modal-footer button {
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    /* Editor content adjustment for mobile */
+    .messages-page .editor-content {
+        min-height: 200px;
+        padding: 15px;
+    }
+
+    /* Editor content adjustment for mobile */
+    .messages-page .editor-content {
+        min-height: 200px;
+        padding: 15px;
+    }
+}
+
+/* New Classes to Replace Inline Styles */
+.mobile-compose-btn {
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    padding: 0;
+}
+
+.star-icon-hidden {
+    font-size: 0.8em;
+    display: none;
+}
+
+.mr-auto {
+    margin-right: auto;
+}
+
+.modal-overlay-hidden {
+    display: none;
+}
+
+.email-template-content {
+    max-width: 600px;
+}
+
+.template-grid {
+    display: grid;
+    gap: 15px;
+}
+
+.file-upload-content {
+    max-width: 500px;
+}
+
+.file-upload-area {
+    border: 2px dashed var(--admin-border);
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.file-upload-icon {
+    font-size: 2rem;
+    color: var(--admin-primary);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.file-upload-hint {
+    font-size: 0.8rem;
+    color: var(--admin-text-muted);
+}
+
+.hidden-input {
+    display: none;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.file-preview-item {
+    padding: 10px;
+    background: var(--admin-card);
+    border-radius: 6px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.file-preview-info {
+    display: flex;
+    align-items: center;
+}
+
+.file-preview-size {
+    font-size: 0.8rem;
+    color: var(--admin-text-muted);
+    margin-left: 10px;
+}
+
+.remove-file-btn {
+    background: none;
+    border: none;
+    color: var(--admin-danger);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.input-error {
+    border-color: #ef4444 !important;
+}
+
+/* =====================================================
+   RESPONSIVE STYLES
+   ===================================================== */
+
+/* Tablet and below */
+@media (max-width: 992px) {
+    .messages-page .email-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .messages-page .email-sidebar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        z-index: 1000;
+        background: var(--admin-card);
+        box-shadow: 4px 0 25px rgba(0, 0, 0, 0.3);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .messages-page .email-sidebar.active {
+        display: block;
+        transform: translateX(0);
+    }
+
+    /* Mobile sidebar overlay */
+    .messages-page .sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .messages-page .sidebar-overlay.active {
+        display: block;
+    }
+
+    /* Mobile sidebar toggle button */
+    .messages-page .mobile-sidebar-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: var(--admin-primary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .messages-page .email-toolbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .messages-page .email-toolbar h3 {
+        order: 1;
+        flex: 1;
+    }
+
+    .messages-page .search-box {
+        order: 3;
+        width: 100%;
+    }
+
+    /* Mobile compose button visible */
+    .messages-page .mobile-compose-btn {
+        display: flex !important;
+        order: 2;
+    }
+}
+
+/* Desktop - hide mobile elements */
+@media (min-width: 993px) {
+    .messages-page .mobile-sidebar-toggle {
+        display: none !important;
+    }
+
+    .messages-page .sidebar-overlay {
+        display: none !important;
+    }
+
+    .messages-page .email-sidebar {
+        display: block !important;
+        position: static !important;
+        transform: none !important;
+    }
+}

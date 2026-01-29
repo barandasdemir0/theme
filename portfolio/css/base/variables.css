@@ -1,0 +1,61 @@
+/* ============================================
+   BASE - Variables & Custom Properties
+   ============================================ */
+:root {
+    /* Primary Colors */
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --primary-light: #818cf8;
+    --secondary-color: #0ea5e9;
+    --accent-color: #06b6d4;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #6366f1 0%, #0ea5e9 50%, #06b6d4 100%);
+    --gradient-hero: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0f172a 100%);
+    --gradient-text: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+
+    /* Background Colors */
+    --bg-primary: #0f0f23;
+    --bg-secondary: #1a1a3e;
+    --bg-tertiary: #252550;
+    --bg-card: rgba(255, 255, 255, 0.05);
+
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    /* Spacing */
+    --section-padding: 100px 0;
+
+    /* Borders */
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 20px;
+    --border-radius-xl: 30px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.2);
+    --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.3);
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Navbar */
+    --navbar-height: 80px;
+    --navbar-bg: rgba(15, 15, 35, 0.98);
+}

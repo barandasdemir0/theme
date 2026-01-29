@@ -1,0 +1,406 @@
+/* ============================================
+   CUSTOM NOTIFICATIONS & MODALS
+   ============================================ */
+
+/* Toast Container - Centered Top */
+.admin-toast-container {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    pointer-events: none;
+    align-items: center;
+}
+
+/* Toast Item */
+.admin-toast {
+    background: var(--admin-card);
+    border: 1px solid var(--admin-border);
+    border-left: 4px solid var(--admin-primary);
+    border-radius: 12px;
+    padding: 16px 24px;
+    min-width: 320px;
+    max-width: 450px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    pointer-events: auto;
+    animation: slideDown 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-toast.closing {
+    animation: fadeOutUp 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.admin-toast-icon {
+    font-size: 1.4rem;
+    color: var(--admin-primary);
+    margin-top: 0;
+}
+
+.admin-toast-content {
+    flex: 1;
+}
+
+.admin-toast-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: var(--admin-text);
+}
+
+.admin-toast-message {
+    font-size: 0.9rem;
+    color: var(--admin-text-muted);
+    line-height: 1.4;
+}
+
+.admin-toast-close {
+    background: none;
+    border: none;
+    color: var(--admin-text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 5px;
+    margin-top: -5px;
+    margin-right: -5px;
+    transition: color 0.2s;
+}
+
+.admin-toast-close:hover {
+    color: var(--admin-text);
+}
+
+/* Toast Variants */
+.admin-toast.success {
+    border-left-color: var(--admin-success);
+}
+
+.admin-toast.success .admin-toast-icon {
+    color: var(--admin-success);
+}
+
+.admin-toast.error {
+    border-left-color: var(--admin-danger);
+}
+
+.admin-toast.error .admin-toast-icon {
+    color: var(--admin-danger);
+}
+
+.admin-toast.warning {
+    border-left-color: var(--admin-warning);
+}
+
+.admin-toast.warning .admin-toast-icon {
+    color: var(--admin-warning);
+}
+
+.admin-toast.info {
+    border-left-color: var(--admin-info);
+}
+
+.admin-toast.info .admin-toast-icon {
+    color: var(--admin-info);
+}
+
+/* Custom Modal */
+.admin-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.admin-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.admin-modal {
+    background: var(--admin-card);
+    border: 1px solid var(--admin-border);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 450px;
+    padding: 30px;
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.admin-modal-overlay.active .admin-modal {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--admin-danger);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.modal-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.modal-body {
+    color: var(--admin-text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Notification Dropdown */
+.notification-dropdown {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 380px;
+    background: var(--admin-card);
+    /* Changed from #1a1b26 */
+    border: 1px solid var(--admin-border);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: top right;
+    overflow: visible;
+}
+
+/* Invisible bridge to prevent closing when moving mouse */
+.notification-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+}
+
+.notification-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.dropdown-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--admin-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--admin-bg-light-accent, rgba(255, 255, 255, 0.02));
+}
+
+.dropdown-header h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--admin-text);
+}
+
+.mark-all-read {
+    font-size: 0.8rem;
+    color: var(--admin-primary);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.mark-all-read:hover {
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.dropdown-content {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--admin-border);
+    display: flex;
+    gap: 16px;
+    transition: background 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.notification-item:hover {
+    background: var(--admin-bg);
+    /* Better hover for both modes */
+}
+
+.notification-item.unread {
+    background: rgba(99, 102, 241, 0.06);
+}
+
+.notification-item.unread::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--admin-primary);
+}
+
+.notif-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.notif-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.notif-info h5 {
+    font-size: 0.95rem;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+    color: var(--admin-text);
+    /* Fixed color */
+}
+
+.notif-info p {
+    font-size: 0.85rem;
+    color: var(--admin-text-muted);
+    margin: 0 0 6px 0;
+    line-height: 1.4;
+}
+
+.notif-time {
+    font-size: 0.75rem;
+    color: var(--admin-text-muted);
+}
+
+.dropdown-footer {
+    padding: 12px;
+    text-align: center;
+    border-top: 1px solid var(--admin-border);
+    background: var(--admin-bg-light-accent, rgba(255, 255, 255, 0.02));
+}
+
+.view-all-btn {
+    font-size: 0.9rem;
+    color: var(--admin-text);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    width: 100%;
+    padding: 8px;
+    transition: color 0.2s;
+}
+
+.view-all-btn:hover {
+    color: var(--admin-primary);
+}
+
+/* Scrollbar for dropdown */
+.dropdown-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+    background: var(--admin-border);
+    border-radius: 3px;
+}
+
+@media (max-width: 640px) {
+    .notification-dropdown {
+        width: 90%;
+        right: 5%;
+        left: 5%;
+    }
+
+    .admin-toast {
+        min-width: auto;
+        width: 90%;
+        margin: 0 auto;
+    }
+}

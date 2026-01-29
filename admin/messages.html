@@ -1,0 +1,716 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <script src="js/theme-init.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesajlar | Portfolio Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/modules/variables.css">
+    <link rel="stylesheet" href="css/modules/global.css">
+    <link rel="stylesheet" href="css/modules/layout.css">
+    <link rel="stylesheet" href="css/modules/components.css">
+    <link rel="stylesheet" href="css/modules/notifications.css">
+    <link rel="stylesheet" href="css/modules/editor.css">
+    <link rel="stylesheet" href="css/modules/modal.css">
+    <link rel="stylesheet" href="css/modules/login.css">
+    <link rel="stylesheet" href="css/modules/messages.css">
+    <link rel="stylesheet" href="css/modules/blog-editor.css">
+    <!-- Highlight.js for syntax highlighting -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- HTMX for SPA-like behavior (only loaded on server, not file://) -->
+    <script src="js/htmx-loader.js"></script>
+</head>
+
+<body class="messages-page blog-editor-page">
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2><span>Admin</span> Panel</h2>
+                <p>Portfolio Yönetimi</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-section">
+                    <p class="menu-section-title">Sayfa Yönetimi</p>
+                    <a href="profile.html" class="menu-item">
+                        <i class="fas fa-home"></i>
+                        <span>Hero & Profil</span>
+                    </a>
+                    <a href="about.html" class="menu-item">
+                        <i class="fas fa-user"></i>
+                        <span>Hakkımda</span>
+                    </a>
+                    <a href="resume.html" class="menu-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Özgeçmiş</span>
+                    </a>
+                    <a href="contact.html" class="menu-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>İletişim</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">İçerik Yönetimi</p>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="messages.html" class="menu-item active">
+                        <i class="fas fa-inbox"></i>
+                        <span>Mesajlar</span>
+                    </a>
+                    <a href="projects.html" class="menu-item">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Projeler</span>
+                    </a>
+                    <a href="blog.html" class="menu-item">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog Yazıları</span>
+                    </a>
+                    <a href="guestbook.html" class="menu-item">
+                        <i class="fas fa-comments"></i>
+                        <span>Ziyaretçi Defteri</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">Ayarlar</p>
+                    <a href="categories.html" class="menu-item">
+                        <i class="fas fa-tags"></i>
+                        <span>Kategoriler</span>
+                    </a>
+                    <a href="skills.html" class="menu-item">
+                        <i class="fas fa-code"></i>
+                        <span>Yetenekler</span>
+                    </a>
+                    <a href="github.html" class="menu-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Repoları</span>
+                    </a>
+                    <a href="settings.html" class="menu-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Site Ayarları</span>
+                    </a>
+                    <a href="security.html" class="menu-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Güvenlik</span>
+                    </a>
+                    <a href="chatbot.html" class="menu-item">
+                        <i class="fas fa-robot"></i>
+                        <span>Chatbot</span>
+                    </a>
+                    <a href="notifications.html" class="menu-item">
+                        <i class="fas fa-bell"></i>
+                        <span>Bildirimler</span>
+                    </a>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Çıkış Yap</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <header class="admin-header">
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                <div class="page-title">
+                    <h1>Mesajlar</h1>
+                    <p>Gelen kutusu ve mesaj takibi</p>
+                </div>
+
+                <div class="header-actions">
+
+                    <a href="../index.html" target="_blank" class="btn-icon" title="Siteye Git">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <button class="btn-icon notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+
+                    <div class="user-profile" data-action="navigateTo" data-href="profile.html">
+                        <img src="https://ui-avatars.com/api/?name=Baran+D&background=6366f1&color=fff" alt="Admin">
+                        <div class="user-info">
+                            <h4>Baran Dasdemir</h4>
+                            <span>Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="email-layout">
+                <!-- Email Sidebar -->
+                <div class="card email-sidebar">
+                    <button class="btn btn-primary w-100" data-action="openCompose">
+                        <i class="fas fa-pen me-2"></i> Yeni Mesaj
+                    </button>
+
+                    <div class="email-nav" hx-target="#messageTableBody" hx-swap="innerHTML">
+                        <a href="#" class="email-nav-item active" hx-get="/api/messages/inbox" hx-trigger="click"
+                            data-category="inbox">
+                            <i class="fas fa-inbox"></i>
+                            <span>Gelen Kutusu</span>
+                            <span class="nav-badge danger">3</span>
+                        </a>
+                        <a href="#" class="email-nav-item" hx-get="/api/messages/important" hx-trigger="click"
+                            data-category="important">
+                            <i class="fas fa-star"></i>
+                            <span>Önemli</span>
+                            <span class="nav-badge warning">1</span>
+                        </a>
+                        <a href="#" class="email-nav-item" hx-get="/api/messages/read" hx-trigger="click"
+                            data-category="read">
+                            <i class="fas fa-envelope-open"></i>
+                            <span>Okundu</span>
+                            <span class="nav-badge success">4</span>
+                        </a>
+                        <a href="#" class="email-nav-item" hx-get="/api/messages/sent" hx-trigger="click"
+                            data-category="sent">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Gönderilenler</span>
+                            <span class="nav-badge primary">5</span>
+                        </a>
+                        <a href="#" class="email-nav-item" hx-get="/api/messages/drafts" hx-trigger="click"
+                            data-category="drafts">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Taslaklar</span>
+                            <span class="nav-badge draft">1</span>
+                        </a>
+                        <a href="#" class="email-nav-item" hx-get="/api/messages/trash" hx-trigger="click"
+                            data-category="trash">
+                            <i class="fas fa-trash"></i>
+                            <span>Çöp Kutusu</span>
+                            <span class="nav-badge trash">2</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Email List -->
+                <div class="card email-list">
+                    <div class="email-toolbar">
+                        <h3>Gelen Kutusu</h3>
+                        <!-- Mobile New Message Button -->
+                        <button class="btn btn-primary btn-icon d-md-none mobile-compose-btn" data-action="openCompose">
+                            <i class="fas fa-pen"></i>
+                        </button>
+
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Mesajlarda ara..." class="form-control">
+                        </div>
+                    </div>
+
+                    <!-- Mobile Sidebar Toggle -->
+                    <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" title="Klasörleri Göster">
+                        <i class="fas fa-folder"></i>
+                    </button>
+
+                    <!-- Mobile Sidebar Overlay -->
+                    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Gönderen</th>
+                                    <th>Konu</th>
+                                    <th>Durum</th>
+                                    <th>Tarih</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody id="messageTableBody">
+                                <tr class="unread-row">
+                                    <td data-label="Gönderen">Ahmet Yılmaz</td>
+                                    <td data-label="Konu">Proje Teklifi</td>
+                                    <td data-label="Durum"><span class="status-badge danger">Okunmadı</span></td>
+                                    <td data-label="Tarih">20 Ocak 14:30</td>
+                                    <td data-label="İşlemler">
+                                        <div class="action-btns">
+                                            <button class="action-btn edit" title="Görüntüle" data-action="viewMessage"
+                                                data-name="Ahmet Yılmaz" data-email="ahmet@example.com"
+                                                data-subject="Proje Teklifi" data-date="20 Ocak 2026"
+                                                data-message="Merhaba Baran, web sitemiz için yeni bir proje üzerinde çalışmak istiyoruz. Size bir teklif sunmak istiyorum. Uygun olduğunuzda görüşebilir miyiz?"><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="action-btn delete" title="Sil" data-action="deleteMessage"><i
+                                                    class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="unread-row">
+                                    <td data-label="Gönderen">Zeynep Kara</td>
+                                    <td data-label="Konu">İş Birliği</td>
+                                    <td data-label="Durum"><span class="status-badge warning">Önemli</span></td>
+                                    <td data-label="Tarih">19 Ocak 09:15</td>
+                                    <td data-label="İşlemler">
+                                        <div class="action-btns">
+                                            <button class="action-btn edit" title="Görüntüle" data-action="viewMessage"
+                                                data-name="Zeynep Kara" data-email="zeynep@example.com"
+                                                data-subject="İş Birliği" data-date="19 Ocak 2026"
+                                                data-message="Merhaba, bir e-ticaret projesi için iş birliği yapmak istiyoruz. Detayları telefonda konuşabilir miyiz?"><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="action-btn delete" title="Sil" data-action="deleteMessage"><i
+                                                    class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Gönderen">Mehmet Demir</td>
+                                    <td data-label="Konu">Freelance Teklif</td>
+                                    <td data-label="Durum"><span class="status-badge active">Okundu</span></td>
+                                    <td data-label="Tarih">18 Ocak</td>
+                                    <td data-label="İşlemler">
+                                        <div class="action-btns">
+                                            <button class="action-btn edit" title="Görüntüle" data-action="viewMessage"
+                                                data-name="Mehmet Demir" data-email="mehmet@example.com"
+                                                data-subject="Freelance Teklif" data-date="18 Ocak 2026"
+                                                data-message="Freelance olarak mobil uygulama geliştirme konusunda destek alabilir miyiz? Flutter ile bir proje yapmak istiyoruz."><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="action-btn delete" title="Sil" data-action="deleteMessage"><i
+                                                    class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Gönderen">Ayşe Yıldız</td>
+                                    <td data-label="Konu">Re: Portfolio Güncellemesi</td>
+                                    <td data-label="Durum"><span class="status-badge primary">Gönderildi</span></td>
+                                    <td data-label="Tarih">17 Ocak</td>
+                                    <td data-label="İşlemler">
+                                        <div class="action-btns">
+                                            <button class="action-btn edit" title="Görüntüle" data-action="viewMessage"
+                                                data-name="Ayşe Yıldız" data-email="ayse@example.com"
+                                                data-subject="Re: Portfolio Güncellemesi" data-date="17 Ocak 2026"
+                                                data-message="Merhaba, portfolio güncellemesi hakkında görüşlerinizi aldık. Teşekkür ederiz!"><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="action-btn delete" title="Sil" data-action="deleteMessage"><i
+                                                    class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Gönderen">Can Özdemir</td>
+                                    <td data-label="Konu">Fiyat Teklifi</td>
+                                    <td data-label="Durum"><span class="status-badge draft">Taslak</span></td>
+                                    <td data-label="Tarih">16 Ocak</td>
+                                    <td data-label="İşlemler">
+                                        <div class="action-btns">
+                                            <button class="action-btn edit" title="Görüntüle" data-action="viewMessage"
+                                                data-name="Can Özdemir" data-email="can@example.com"
+                                                data-subject="Fiyat Teklifi" data-date="16 Ocak 2026"
+                                                data-message="Proje için hazırladığım fiyat teklifi taslağı. Gönderilmeyi bekliyor."><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="action-btn delete" title="Sil" data-action="deleteMessage"><i
+                                                    class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="deleted-row">
+                                    <td data-label="Gönderen">Spam Mesaj</td>
+                                    <td data-label="Konu">Reklam İçeriği</td>
+                                    <td data-label="Durum"><span class="status-badge trash">Çöp Kutusu</span></td>
+                                    <td data-label="Tarih">15 Ocak</td>
+                                    <td data-label="İşlemler">
+                                        <div class="action-btns">
+                                            <button class="action-btn edit" title="Görüntüle" data-action="viewMessage"
+                                                data-name="Spam Mesaj" data-email="spam@example.com"
+                                                data-subject="Reklam İçeriği" data-date="15 Ocak 2026"
+                                                data-message="Gereksiz reklam içeriği. Silinmiş."><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="action-btn restore" title="Geri Yükle"
+                                                data-action="restoreMessage"><i class="fas fa-undo"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination-wrapper">
+                        <div class="pagination">
+                            <button class="pagination-btn" disabled>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">3</button>
+                            <button class="pagination-btn">4</button>
+                            <button class="pagination-btn">5</button>
+                            <button class="pagination-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="admin-footer">
+                <div>&copy; 2024 Baran Dasdemir. Tüm hakları saklıdır.</div>
+                <div>v1.0.0</div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Compose Message Modal -->
+    <div class="admin-modal-overlay" id="composeModal">
+        <div class="admin-modal">
+            <div class="modal-header">
+                <h3>Yeni Mesaj</h3>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Alıcı</label>
+                    <input type="email" id="composeRecipient" class="form-control" placeholder="Örn: ornek@email.com"
+                        required data-error-required="Alıcı e-posta adresi gereklidir">
+                </div>
+                <div class="form-group">
+                    <label>Konu</label>
+                    <input type="text" id="composeSubject" class="form-control" placeholder="Mesaj konusu..." required
+                        data-error-required="Konu gereklidir">
+                </div>
+
+                <!-- Rich Text Editor -->
+                <div class="blog-editor">
+                    <!-- Tabs -->
+                    <div class="editor-tabs">
+                        <button class="editor-tab active" data-action="switchTab" data-tab="edit">
+                            <i class="fas fa-edit"></i> Düzenle
+                        </button>
+                        <button class="editor-tab" data-action="switchTab" data-tab="preview">
+                            <i class="fas fa-eye"></i> Önizleme
+                        </button>
+                    </div>
+
+                    <!-- Toolbar -->
+                    <div class="editor-toolbar" id="editorToolbar">
+                        <!-- Text Formatting -->
+                        <div class="toolbar-group">
+                            <button class="toolbar-btn" data-action="formatText" data-command="bold"
+                                title="Kalın (Ctrl+B)">
+                                <i class="fas fa-bold"></i>
+                            </button>
+                            <button class="toolbar-btn" data-action="formatText" data-command="italic"
+                                title="İtalik (Ctrl+I)">
+                                <i class="fas fa-italic"></i>
+                            </button>
+                            <button class="toolbar-btn" data-action="formatText" data-command="underline"
+                                title="Altı Çizili (Ctrl+U)">
+                                <i class="fas fa-underline"></i>
+                            </button>
+                            <button class="toolbar-btn" data-action="formatText" data-command="strikeThrough"
+                                title="Üstü Çizili">
+                                <i class="fas fa-strikethrough"></i>
+                            </button>
+                        </div>
+
+                        <!-- Font Size -->
+                        <div class="toolbar-group">
+                            <button class="toolbar-btn" data-action="decreaseFontSize" title="Yazı Küçült">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <select class="form-control editor-font-size-select" id="fontSizeSelect">
+                                <option value="1">8</option>
+                                <option value="2">10</option>
+                                <option value="3" selected>12</option>
+                                <option value="4">14</option>
+                                <option value="5">18</option>
+                                <option value="6">24</option>
+                                <option value="7">36</option>
+                            </select>
+                            <button class="toolbar-btn" data-action="increaseFontSize" title="Yazı Büyüt">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <!-- Headings -->
+                        <div class="toolbar-group">
+                            <button class="toolbar-btn toolbar-btn-wide" data-action="formatBlock" data-block="h1"
+                                title="Başlık 1">H1</button>
+                            <button class="toolbar-btn toolbar-btn-wide" data-action="formatBlock" data-block="h2"
+                                title="Başlık 2">H2</button>
+                            <button class="toolbar-btn toolbar-btn-wide" data-action="formatBlock" data-block="h3"
+                                title="Başlık 3">H3</button>
+                        </div>
+
+                        <!-- Colors -->
+                        <div class="toolbar-group">
+                            <div class="color-picker">
+                                <button class="toolbar-btn color-picker-btn" title="Yazı Rengi">
+                                    <i class="fas fa-font"></i>
+                                    <span id="textColorIndicator" class="color-indicator"></span>
+                                </button>
+                                <input type="color" id="textColorPicker" value="#ef4444" class="color-input">
+                            </div>
+                            <div class="color-picker">
+                                <button class="toolbar-btn color-picker-btn" title="Arka Plan Rengi">
+                                    <i class="fas fa-highlighter"></i>
+                                </button>
+                                <input type="color" id="bgColorPicker" value="#fef08a" class="color-input">
+                            </div>
+                            <button class="toolbar-btn" data-action="formatText" data-command="removeFormat"
+                                title="Biçimi Temizle (Renkleri Sıfırla)">
+                                <i class="fas fa-eraser"></i>
+                            </button>
+                        </div>
+
+                        <!-- Lists & Quote -->
+                        <div class="toolbar-group">
+                            <button class="toolbar-btn" data-action="formatText" data-command="insertUnorderedList"
+                                title="Madde İşaretli Liste">
+                                <i class="fas fa-list-ul"></i>
+                            </button>
+                            <button class="toolbar-btn" data-action="formatText" data-command="insertOrderedList"
+                                title="Numaralı Liste">
+                                <i class="fas fa-list-ol"></i>
+                            </button>
+                            <button class="toolbar-btn" data-action="insertQuote" title="Alıntı">
+                                <i class="fas fa-quote-left"></i>
+                            </button>
+                        </div>
+
+                        <!-- Media & Links -->
+                        <div class="toolbar-group">
+                            <button class="toolbar-btn" data-action="insertLink" title="Link Ekle">
+                                <i class="fas fa-link"></i>
+                            </button>
+                            <button class="toolbar-btn" data-action="insertImage" title="Resim Ekle">
+                                <i class="fas fa-image"></i>
+                            </button>
+                            <button class="toolbar-btn" data-action="insertVideo" title="Video Ekle">
+                                <i class="fas fa-video"></i>
+                            </button>
+                            <button class="toolbar-btn" data-action="insertCode" title="Kod Bloğu">
+                                <i class="fas fa-code"></i>
+                            </button>
+                        </div>
+
+                        <!-- Alignment -->
+                        <div class="toolbar-group">
+                            <button class="toolbar-btn" data-action="formatText" data-command="justifyLeft"
+                                title="Sola Hizala">
+                                <i class="fas fa-align-left"></i>
+                            </button>
+                            <button class="toolbar-btn" data-action="formatText" data-command="justifyCenter"
+                                title="Ortala">
+                                <i class="fas fa-align-center"></i>
+                            </button>
+                            <button class="toolbar-btn" data-action="formatText" data-command="justifyRight"
+                                title="Sağa Hizala">
+                                <i class="fas fa-align-right"></i>
+                            </button>
+                            <button class="toolbar-btn" data-action="formatText" data-command="justifyFull"
+                                title="İki Yana Yasla">
+                                <i class="fas fa-align-justify"></i>
+                            </button>
+                        </div>
+
+                        <!-- Extras -->
+                        <div class="toolbar-group">
+                            <button class="toolbar-btn" data-action="insertTable" title="Tablo Ekle">
+                                <i class="fas fa-table"></i>
+                            </button>
+                            <button class="toolbar-btn" data-action="insertHR" title="Yatay Çizgi">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button class="toolbar-btn" data-action="insertEmoji" title="Emoji">
+                                <i class="fas fa-smile"></i>
+                            </button>
+                        </div>
+
+                        <!-- Undo/Redo -->
+                        <div class="toolbar-group">
+                            <button class="toolbar-btn" data-action="formatText" data-command="undo"
+                                title="Geri Al (Ctrl+Z)">
+                                <i class="fas fa-undo"></i>
+                            </button>
+                            <button class="toolbar-btn" data-action="formatText" data-command="redo"
+                                title="İleri Al (Ctrl+Y)">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Template Quick Selection -->
+                    <div class="template-quick-bar">
+                        <button class="btn btn-sm btn-outline template-quick-btn" data-template="welcome">
+                            <i class="fas fa-star"></i> Hoş Geldi
+                        </button>
+                        <button class="btn btn-sm btn-outline template-quick-btn" data-template="project-update">
+                            <i class="fas fa-refresh"></i> Güncelleme
+                        </button>
+                        <button class="btn btn-sm btn-outline template-quick-btn" data-template="meeting">
+                            <i class="fas fa-handshake"></i> Toplantı
+                        </button>
+                        <button class="btn btn-sm btn-outline template-quick-btn" data-template="quote">
+                            <i class="fas fa-file-invoice-dollar"></i> Fiyat Teklifi
+                        </button>
+                        <button class="btn btn-sm btn-outline template-quick-btn" data-template="support">
+                            <i class="fas fa-life-ring"></i> Teknik Destek
+                        </button>
+                        <button class="btn btn-sm btn-outline template-quick-btn" data-template="thanks">
+                            <i class="fas fa-heart"></i> Teşekkür
+                        </button>
+                        <button class="btn btn-sm btn-outline template-quick-btn template-quick-btn-end"
+                            data-action="openFileUpload">
+                            <i class="fas fa-paperclip"></i> Dosya Ekle
+                        </button>
+                    </div>
+
+                    <!-- Content Area -->
+                    <div class="editor-content" id="editorContent" contenteditable="true"
+                        data-placeholder="Mesajınızı buraya yazın..." data-error-required="Mesaj içeriği gereklidir">
+                    </div>
+
+                    <!-- Preview Area -->
+                    <div class="editor-content editor-preview" id="previewContent">
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="editor-footer">
+                        <div class="editor-stats">
+                            <span><i class="fas fa-font"></i> <span id="wordCount">0</span> kelime</span>
+                            <span><i class="fas fa-clock"></i> <span id="readTime">0</span> dk okuma</span>
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-outline" data-action="clearEditor">
+                                <i class="fas fa-eraser"></i> Temizle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-outline" data-action="closeComposeModal">
+                    Vazgeç
+                </button>
+                <div>
+                    <button class="btn btn-secondary" id="saveDraftBtn" data-success-title="Taslak Kaydedildi"
+                        data-success-msg="Mesaj taslağa başarıyla kaydedildi!">
+                        <i class="fas fa-save me-2"></i> Taslağa Al
+                    </button>
+                    <button class="btn btn-primary" id="sendMessageBtn" data-success-title="Başarılı"
+                        data-success-msg="Mesaj başarıyla gönderildi!">
+                        <i class="fas fa-paper-plane me-2"></i> Gönder
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message View Modal -->
+    <div class="admin-modal-overlay" id="messageModal">
+        <div class="admin-modal">
+            <div class="modal-header">
+                <h3 id="modalSubject">Mesaj Detayı</h3>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div>
+                        <span><i class="fas fa-user"></i>Gönderen:</span>
+                        <strong id="modalName">-</strong>
+                    </div>
+                    <div>
+                        <span><i class="fas fa-envelope"></i>Email:</span>
+                        <span id="modalEmail">-</span>
+                    </div>
+                    <div>
+                        <span><i class="fas fa-calendar"></i>Tarih:</span>
+                        <span id="modalDate">-</span>
+                    </div>
+                </div>
+                <div>
+                    <label>Mesaj İçeriği</label>
+                    <p id="modalMessage">-</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-warning mr-auto" data-action="toggleImportant" id="importantBtn">
+                    <i class="fas fa-star"></i> Önemli
+                </button>
+                <button class="btn btn-success" data-action="markAsRead" id="markReadBtn">
+                    <i class="fas fa-check"></i> Okundu
+                </button>
+                <button class="btn btn-secondary" data-action="closeMessageModal">İptal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Send Email Template Modal -->
+    <div class="admin-modal-overlay modal-overlay-hidden" id="emailTemplateModal">
+        <div class="admin-modal email-template-content">
+            <div class="modal-header">
+                <h3>Mail Şablonu Seç</h3>
+            </div>
+            <div class="modal-body">
+                <div class="template-grid">
+                    <div class="template-card" data-template="welcome">
+                        <h4>Hoş Geldin Şablonu</h4>
+                        <p>Yeni kullanıcılara hoş geldi mesajı gönder</p>
+                        <button class="btn btn-primary btn-sm" data-action="selectTemplate">Seç</button>
+                    </div>
+                    <div class="template-card" data-template="project-update">
+                        <h4>Proje Güncellemesi</h4>
+                        <p>Proje durumu ve ilerlemesi hakkında bilgilendirme</p>
+                        <button class="btn btn-primary btn-sm" data-action="selectTemplate">Seç</button>
+                    </div>
+                    <div class="template-card" data-template="custom">
+                        <h4>Özel Şablon</h4>
+                        <p>Kendi HTML şablonunuzu yazın</p>
+                        <button class="btn btn-primary btn-sm" data-action="selectTemplate">Seç</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-action="closeEmailTemplate">İptal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- File Upload Modal -->
+    <div class="admin-modal-overlay" id="fileUploadModal">
+        <div class="admin-modal file-upload-content">
+            <div class="modal-header">
+                <h3>Dosya Ekle</h3>
+            </div>
+            <div class="modal-body">
+                <div class="file-upload-area" id="fileUploadArea">
+                    <i class="fas fa-cloud-upload-alt file-upload-icon"></i>
+                    <p>Dosya yüklemek için tıkla ya da sürükle</p>
+                    <p class="file-upload-hint">Max 25MB</p>
+                </div>
+                <input type="file" id="fileInput" class="hidden-input">
+                <div id="fileList" class="mt-15"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-action="closeFileUpload">İptal</button>
+                <button class="btn btn-success" data-action="confirmFileUpload">Ekle</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/modules/pages.js"></script>
+    <script src="js/modules/notifications.js"></script>
+    <script src="js/modules/auth.js"></script>
+    <script src="js/modules/ui.js"></script>
+    <script src="js/modules/messages.js"></script>
+    <script src="js/modules/blog-editor.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

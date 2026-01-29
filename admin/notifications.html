@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <script src="js/theme-init.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bildirimler | Portfolio Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/modules/variables.css?v=1.0">
+    <link rel="stylesheet" href="css/modules/global.css?v=1.0">
+    <link rel="stylesheet" href="css/modules/layout.css?v=1.0">
+    <link rel="stylesheet" href="css/modules/components.css?v=1.0">
+    <link rel="stylesheet" href="css/modules/notifications.css?v=1.0">
+    <link rel="stylesheet" href="css/modules/notifications-page.css?v=1.0">
+    <link rel="stylesheet" href="css/modules/messages.css?v=1.0">
+</head>
+
+<body class="notifications-page">
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2>Baran<span>Admin</span></h2>
+                <p>Portfolio Yönetim Paneli</p>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="menu-section">
+                    <p class="menu-section-title">Sayfa Yönetimi</p>
+                    <a href="profile.html" class="menu-item">
+                        <i class="fas fa-home"></i>
+                        <span>Hero & Profil</span>
+                    </a>
+                    <a href="about.html" class="menu-item">
+                        <i class="fas fa-user"></i>
+                        <span>Hakkımda</span>
+                    </a>
+                    <a href="resume.html" class="menu-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Özgeçmiş</span>
+                    </a>
+                    <a href="contact.html" class="menu-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>İletişim</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">İçerik Yönetimi</p>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="messages.html" class="menu-item">
+                        <i class="fas fa-inbox"></i>
+                        <span>Mesajlar</span>
+                    </a>
+                    <a href="projects.html" class="menu-item">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Projeler</span>
+                    </a>
+                    <a href="blog.html" class="menu-item">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog Yazıları</span>
+                    </a>
+                    <a href="guestbook.html" class="menu-item">
+                        <i class="fas fa-comments"></i>
+                        <span>Ziyaretçi Defteri</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <p class="menu-section-title">Ayarlar</p>
+                    <a href="categories.html" class="menu-item">
+                        <i class="fas fa-tags"></i>
+                        <span>Kategoriler</span>
+                    </a>
+                    <a href="skills.html" class="menu-item">
+                        <i class="fas fa-code"></i>
+                        <span>Yetenekler</span>
+                    </a>
+                    <a href="github.html" class="menu-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Repoları</span>
+                    </a>
+                    <a href="settings.html" class="menu-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Site Ayarları</span>
+                    </a>
+                    <a href="security.html" class="menu-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Güvenlik</span>
+                    </a>
+                    <a href="chatbot.html" class="menu-item">
+                        <i class="fas fa-robot"></i>
+                        <span>Chatbot</span>
+                    </a>
+                    <a href="notifications.html" class="menu-item active">
+                        <i class="fas fa-bell"></i>
+                        <span>Bildirimler</span>
+                    </a>
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Çıkış Yap</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <header class="admin-header">
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                <div class="page-title">
+
+                    <div>
+                        <h1>Tüm Bildirimler</h1>
+                        <p>Geçmiş bildirimlerinizi görüntüleyin ve yönetin.</p>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+
+                    <a href="../index.html" target="_blank" class="btn-icon" title="Siteye Git">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <button class="btn-icon notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+
+                    <!-- Static Notification Dropdown -->
+                    <div class="notification-dropdown">
+                        <div class="dropdown-header">
+                            <h4>Bildirimler</h4>
+                            <button class="mark-all-read">Tümünü Okundu İşaretle</button>
+                        </div>
+                        <div class="dropdown-content">
+                            <div class="notification-item unread">
+                                <div class="notif-icon icon-blue">
+                                    <i class="fas fa-comment-alt"></i>
+                                </div>
+                                <div class="notif-info">
+                                    <h5>Yeni Yorum</h5>
+                                    <p>Ahmet Y. "E-Ticaret Projesi" için yeni bir yorum bıraktı.</p>
+                                    <span class="notif-time">10 dakika önce</span>
+                                </div>
+                            </div>
+                            <div class="notification-item unread">
+                                <div class="notif-icon icon-green">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="notif-info">
+                                    <h5>Proje Onaylandı</h5>
+                                    <p>Fitness Tracker App yayına alındı.</p>
+                                    <span class="notif-time">2 saat önce</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notif-icon icon-yellow">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="notif-info">
+                                    <h5>Sistem Uyarısı</h5>
+                                    <p>Depolama alanı %85 doluluk oranına ulaştı.</p>
+                                    <span class="notif-time">Dün</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-footer">
+                            <button class="view-all-btn">Tüm Bildirimleri Gör</button>
+                        </div>
+                    </div>
+
+                    <div class="user-profile" data-action="navigateTo" data-href="profile.html">
+                        <img src="https://ui-avatars.com/api/?name=Baran+D&background=6366f1&color=fff" alt="Admin">
+                        <div class="user-info">
+                            <h4>Baran Dasdemir</h4>
+                            <span>Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Notifications List -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Bildirim Geçmişi</h3>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Tür</th>
+                                <th>Mesaj</th>
+                                <th>Zaman</th>
+                                <th>Durum</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="unread-row">
+                                <td width="60">
+                                    <div class="notif-icon-sm icon-blue">
+                                        <i class="fas fa-comment-alt"></i>
+                                    </div>
+                                </td>
+                                <td>
+                                    <strong>Yeni Yorum:</strong> Ahmet Y. "E-Ticaret Projesi" için yorum yaptı.
+                                </td>
+                                <td>10 dk önce</td>
+                                <td><span class="status-badge pending">Okunmadı</span></td>
+                                <td>
+                                    <div class="action-btns">
+                                        <button class="action-btn edit" title="Okundu Olarak İşaretle"
+                                            data-action="markRead"><i class="fas fa-check"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="unread-row">
+                                <td>
+                                    <div class="notif-icon-sm icon-green">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                </td>
+                                <td>
+                                    <strong>Proje Onaylandı:</strong> Fitness Tracker App yayına alındı.
+                                </td>
+                                <td>2 saat önce</td>
+                                <td><span class="status-badge pending">Okunmadı</span></td>
+                                <td>
+                                    <div class="action-btns">
+                                        <button class="action-btn edit" title="Okundu Olarak İşaretle"
+                                            data-action="markRead"><i class="fas fa-check"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="notif-icon-sm icon-yellow">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                </td>
+                                <td>
+                                    <strong>Sistem Uyarısı:</strong> Depolama alanı %85 doluluk oranına ulaştı.
+                                </td>
+                                <td>Dün</td>
+                                <td><span class="status-badge active">Okundu</span></td>
+                                <td>
+                                    <div class="action-btns">
+                                        <button class="action-btn delete" title="Sil"><i
+                                                class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="notif-icon-sm icon-purple">
+                                        <i class="fas fa-user-plus"></i>
+                                    </div>
+                                </td>
+                                <td>
+                                    <strong>Yeni Üye:</strong> Yeni bir admin kullanıcısı oluşturuldu.
+                                </td>
+                                <td>3 gün önce</td>
+                                <td><span class="status-badge active">Okundu</span></td>
+                                <td>
+                                    <div class="action-btns">
+                                        <button class="action-btn delete" title="Sil"><i
+                                                class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-center">
+                    <button class="pagination-btn" id="prevPage">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn">4</button>
+                    <button class="pagination-btn">5</button>
+                    <button class="pagination-btn" id="nextPage">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <footer class="admin-footer">
+                <div>&copy; 2024 Baran Dasdemir. Tüm hakları saklıdır.</div>
+                <div>v1.0.0</div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/modules/pages.js"></script>
+    <script src="js/modules/notifications.js"></script>
+    <script src="js/modules/auth.js"></script>
+    <script src="js/modules/ui.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

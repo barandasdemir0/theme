@@ -1,0 +1,183 @@
+/* Project Detail Page Styles */
+
+.project-hero {
+    padding: 150px 0 60px;
+    background: var(--bg-secondary);
+}
+
+/* Breadcrumb */
+.project-breadcrumb .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.project-breadcrumb .breadcrumb-item > a {
+    color: var(--text-muted);
+}
+
+.project-breadcrumb .breadcrumb-item.active {
+    color: var(--text-primary);
+}
+
+/* Project Description */
+.project-description {
+    color: var(--text-secondary);
+    max-width: 700px;
+    font-size: 1.1rem;
+}
+
+.project-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.project-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--glass-bg);
+    padding: 8px 16px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--glass-border);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.project-meta-item i {
+    color: var(--primary-color);
+}
+
+.project-content {
+    padding: 60px 0;
+}
+
+.project-content h2 {
+    font-size: 1.8rem;
+    margin: 40px 0 20px;
+    color: var(--text-primary);
+}
+
+.project-content h3 {
+    font-size: 1.4rem;
+    margin: 30px 0 15px;
+    color: var(--text-primary);
+}
+
+.project-content p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.project-content ul,
+.project-content ol {
+    color: var(--text-secondary);
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.project-content li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.project-content code {
+    background: var(--bg-secondary);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9em;
+}
+
+.project-content pre {
+    background: var(--bg-secondary);
+    padding: 20px;
+    border-radius: var(--border-radius-md);
+    overflow-x: auto;
+    margin: 20px 0;
+    border: 1px solid var(--glass-border);
+}
+
+.project-image {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    margin: 30px 0;
+    border: 1px solid var(--glass-border);
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.tech-tag {
+    background: var(--gradient-primary);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Project Detail Sidebar */
+.project-detail-sidebar {
+    background: var(--glass-bg);
+    padding: 30px;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--glass-border);
+    position: sticky;
+    top: 100px;
+}
+
+.project-detail-sidebar h4 {
+    margin-bottom: 20px;
+}
+
+.project-detail-sidebar hr {
+    border-color: var(--glass-border);
+}
+
+.project-info-item {
+    margin-bottom: 15px;
+}
+
+.project-info-item span {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    display: block;
+}
+
+.project-info-item p {
+    margin: 5px 0 0;
+    color: var(--text-primary);
+}
+
+/* Related Blog Section */
+.project-related-section {
+    background: var(--bg-secondary);
+}
+
+.section-icon,
+.sidebar-icon {
+    color: var(--primary-color);
+}
+
+.section-description {
+    color: var(--text-secondary);
+}
