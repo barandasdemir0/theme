@@ -16,9 +16,24 @@
     <link rel="stylesheet" href="css/modules/notifications.css">
     <link rel="stylesheet" href="css/modules/login.css">
     <link rel="stylesheet" href="css/modules/settings.css">
+    <link rel="stylesheet" href="css/modules/preloader.css">
 </head>
 
 <body class="settings-page">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader-container">
+            <div class="loader-logo"><span>B</span>aran<span>.</span></div>
+            <div class="loader"></div>
+            <div class="loader-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="loader-progress"></div>
+            <div class="loader-text">Yükleniyor</div>
+        </div>
+    </div>
     <div class="admin-wrapper">
         <!-- Sidebar -->
         <aside class="admin-sidebar">
@@ -131,7 +146,7 @@
                     <a href="../index.html" target="_blank" class="btn-icon" title="Siteye Git">
                         <i class="fas fa-external-link-alt"></i>
                     </a>
-                    <button class="btn-icon notification-btn">
+                    <button class="btn-icon notification-btn" data-mobile-href="notifications.html">
                         <i class="fas fa-bell"></i>
                         <span class="notification-badge">3</span>
                     </button>

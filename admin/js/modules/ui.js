@@ -5,12 +5,28 @@ class UISystem {
     }
 
     init() {
+        this.setupPreloader();
         this.setupSidebar();
         this.setupForms();
         this.setupActions();
         this.setupTheme();
         this.setupPasswordVisibility();
         this.setupModalScrollLock();
+    }
+
+    setupPreloader() {
+        const preloader = document.querySelector('.preloader');
+        if (!preloader) return;
+
+        // Ensure preloader is visible on initial page load
+        preloader.classList.remove('hidden');
+
+        // Hide after page loads with a slight delay for smooth transition
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+            }, 800); // 800ms delay as requested (balanced speed)
+        });
     }
 
     setupModalScrollLock() {
@@ -171,7 +187,7 @@ class UISystem {
                                 statusBadge.setAttribute('data-original-class', statusBadge.className);
                                 statusBadge.setAttribute('data-original-text', statusBadge.textContent);
 
-                                statusBadge.className = 'status-badge bg-danger badge-danger-custom';
+                                statusBadge.className = 'status-badge danger';
                                 statusBadge.textContent = window.I18N?.ui?.deleted || 'Silindi';
                             }
 

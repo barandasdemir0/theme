@@ -275,43 +275,45 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Form submission
-    const form = experienceForm.querySelector('form');
-    if (form) {
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
+    if (experienceForm) {
+        const form = experienceForm.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
 
-            if (editingRow) {
-                // Update existing row
-                const cells = editingRow.querySelectorAll('td');
-                const positionInput = form.querySelector('input[placeholder*="Full Stack Developer"]');
-                const companyInput = form.querySelector('input[placeholder*="TechCorp"]');
+                if (editingRow) {
+                    // Update existing row
+                    const cells = editingRow.querySelectorAll('td');
+                    const positionInput = form.querySelector('input[placeholder*="Full Stack Developer"]');
+                    const companyInput = form.querySelector('input[placeholder*="TechCorp"]');
 
-                if (cells[0]) {
-                    cells[0].innerHTML = '<strong>' + positionInput.value + '</strong>';
+                    if (cells[0]) {
+                        cells[0].innerHTML = '<strong>' + positionInput.value + '</strong>';
+                    }
+                    if (cells[1]) {
+                        cells[1].textContent = companyInput.value;
+                    }
+
+                    // Save Display Order
+                    const displayOrderInput = form.querySelector('#displayOrder');
+                    if (displayOrderInput) {
+                        editingRow.dataset.order = displayOrderInput.value;
+                    }
+
+                    const config = document.getElementById('resumeConfig');
+                    showNotification(config?.dataset.msgUpdateSuccess || 'Güncelleme başarılı!', 'success');
+                    editingRow = null;
+                } else {
+                    // Add new row
+                    const config = document.getElementById('resumeConfig');
+                    showNotification(config?.dataset.msgAddSuccess || 'Ekleme başarılı!', 'success');
                 }
-                if (cells[1]) {
-                    cells[1].textContent = companyInput.value;
-                }
 
-                // Save Display Order
-                const displayOrderInput = form.querySelector('#displayOrder');
-                if (displayOrderInput) {
-                    editingRow.dataset.order = displayOrderInput.value;
-                }
-
-                const config = document.getElementById('resumeConfig');
-                showNotification(config?.dataset.msgUpdateSuccess || 'Güncelleme başarılı!', 'success');
-                editingRow = null;
-            } else {
-                // Add new row
-                const config = document.getElementById('resumeConfig');
-                showNotification(config?.dataset.msgAddSuccess || 'Ekleme başarılı!', 'success');
-            }
-
-            experienceForm.classList.remove('visible');
-            experienceForm.style.display = 'none';
-            form.reset();
-        });
+                experienceForm.classList.remove('visible');
+                experienceForm.style.display = 'none';
+                form.reset();
+            });
+        }
     }
 
     // Hide form initially

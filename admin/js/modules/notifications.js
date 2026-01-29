@@ -41,6 +41,13 @@ class NotificationSystem {
                 e.preventDefault();
                 e.stopPropagation();
 
+                // Mobile Redirect: Go to notifications page on small screens
+                if (window.innerWidth <= 768) {
+                    const mobileHref = notifBtn.getAttribute('data-mobile-href') || 'notifications.html';
+                    window.location.href = mobileHref;
+                    return;
+                }
+
                 // console.log("Notification button clicked!");
 
                 if (dropdown) {
@@ -102,6 +109,9 @@ class NotificationSystem {
 
         if (notifBtn) {
             notifBtn.addEventListener('mouseenter', () => {
+                // Disable hover dropdown on mobile
+                if (window.innerWidth <= 768) return;
+
                 const dropdown = document.querySelector(dropdownSelector);
                 if (dropdown) {
                     dropdown.classList.add('active');
